@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEC24C151D35B161009AC613 /* SFLBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C131D35B161009AC613 /* SFLBaseModel.swift */; };
+		AEC24C161D35B161009AC613 /* SFLConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C141D35B161009AC613 /* SFLConnection.swift */; };
+		AEC24C181D35B209009AC613 /* HoBshareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C171D35B209009AC613 /* HoBshareViewController.swift */; };
+		AEC24C1A1D35B24C009AC613 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C191D35B24C009AC613 /* MeViewController.swift */; };
+		AEC24C1C1D35B281009AC613 /* EditHobbiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */; };
+		AEC24C1E1D35B2AD009AC613 /* NeighborsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */; };
 		AEDC0BE41D333D5B00C0822B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC0BE31D333D5B00C0822B /* AppDelegate.swift */; };
 		AEDC0BE61D333D5B00C0822B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC0BE51D333D5B00C0822B /* ViewController.swift */; };
 		AEDC0BE91D333D5B00C0822B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDC0BE71D333D5B00C0822B /* Main.storyboard */; };
@@ -35,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AEC24C131D35B161009AC613 /* SFLBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLBaseModel.swift; path = ../../../../../../../../StarterKit/SFLBaseModel.swift; sourceTree = "<group>"; };
+		AEC24C141D35B161009AC613 /* SFLConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLConnection.swift; path = ../../../../../../../../StarterKit/SFLConnection.swift; sourceTree = "<group>"; };
+		AEC24C171D35B209009AC613 /* HoBshareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoBshareViewController.swift; sourceTree = "<group>"; };
+		AEC24C191D35B24C009AC613 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHobbiesViewController.swift; sourceTree = "<group>"; };
+		AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeighborsViewController.swift; sourceTree = "<group>"; };
 		AEDC0BE01D333D5A00C0822B /* hoBshare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hoBshare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDC0BE31D333D5B00C0822B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDC0BE51D333D5B00C0822B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +116,12 @@
 				AEDC0BE31D333D5B00C0822B /* AppDelegate.swift */,
 				AEDC0BE51D333D5B00C0822B /* ViewController.swift */,
 				AEDC0BE71D333D5B00C0822B /* Main.storyboard */,
+				AEC24C171D35B209009AC613 /* HoBshareViewController.swift */,
+				AEC24C191D35B24C009AC613 /* MeViewController.swift */,
+				AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */,
+				AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */,
+				AEC24C131D35B161009AC613 /* SFLBaseModel.swift */,
+				AEC24C141D35B161009AC613 /* SFLConnection.swift */,
 				AEDC0BEA1D333D5B00C0822B /* Assets.xcassets */,
 				AEDC0BEC1D333D5B00C0822B /* LaunchScreen.storyboard */,
 				AEDC0BEF1D333D5B00C0822B /* Info.plist */,
@@ -263,8 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC24C1E1D35B2AD009AC613 /* NeighborsViewController.swift in Sources */,
+				AEC24C1A1D35B24C009AC613 /* MeViewController.swift in Sources */,
+				AEC24C151D35B161009AC613 /* SFLBaseModel.swift in Sources */,
+				AEC24C181D35B209009AC613 /* HoBshareViewController.swift in Sources */,
+				AEC24C1C1D35B281009AC613 /* EditHobbiesViewController.swift in Sources */,
 				AEDC0BE61D333D5B00C0822B /* ViewController.swift in Sources */,
 				AEDC0BE41D333D5B00C0822B /* AppDelegate.swift in Sources */,
+				AEC24C161D35B161009AC613 /* SFLConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +515,7 @@
 				AEDC0C0A1D333D5B00C0822B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEDC0C0B1D333D5B00C0822B /* Build configuration list for PBXNativeTarget "hoBshareTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +524,7 @@
 				AEDC0C0D1D333D5B00C0822B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEDC0C0E1D333D5B00C0822B /* Build configuration list for PBXNativeTarget "hoBshareUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +533,7 @@
 				AEDC0C101D333D5B00C0822B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

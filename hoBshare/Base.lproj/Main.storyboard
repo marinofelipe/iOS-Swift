@@ -9,7 +9,7 @@
         <!--Neighbors-->
         <scene sceneID="PIH-tp-PDM">
             <objects>
-                <viewController id="UHg-0m-HCh" sceneMemberID="viewController">
+                <viewController id="UHg-0m-HCh" customClass="NeighborsViewController" customModule="hoBshare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zm9-VB-kHh"/>
                         <viewControllerLayoutGuide type="bottom" id="d35-Pb-pC1"/>
@@ -64,6 +64,10 @@
                                         <exclude reference="AhX-XW-oSe"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="UHg-0m-HCh" id="u0Y-sz-Zra"/>
+                                    <outlet property="delegate" destination="UHg-0m-HCh" id="Y2d-Hf-C4B"/>
+                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" verticalHuggingPriority="200" verticalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="1Cx-Ms-sVE">
                                 <rect key="frame" x="20" y="448" width="560" height="2"/>
@@ -82,6 +86,9 @@
                                         <exclude reference="5Jy-ql-QKK"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="UHg-0m-HCh" id="Yhk-Jz-D0n"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,6 +108,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Neighbors" image="neighbors" selectedImage="neighbors" id="PjE-DE-NFY"/>
+                    <connections>
+                        <outlet property="hobbiesCollectionView" destination="MUR-1R-XWq" id="p9V-pa-bI7"/>
+                        <outlet property="mapView" destination="5Le-Pb-5nJ" id="fuu-bc-fqg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3W-92-KKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,7 +120,7 @@
         <!--Me-->
         <scene sceneID="e9G-Jf-BSl">
             <objects>
-                <viewController id="i6b-Qp-o2k" sceneMemberID="viewController">
+                <viewController id="i6b-Qp-o2k" customClass="MeViewController" customModule="hoBshare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PrF-hO-KOF"/>
                         <viewControllerLayoutGuide type="bottom" id="hqe-L0-3gF"/>
@@ -204,6 +215,10 @@
                                         <exclude reference="K42-8J-HxY"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="i6b-Qp-o2k" id="quA-sw-iRf"/>
+                                    <outlet property="delegate" destination="i6b-Qp-o2k" id="21T-5o-X3G"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEL-ub-p3f">
                                 <rect key="frame" x="285" y="513" width="30" height="30"/>
@@ -249,6 +264,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Me" prompt="New username Sign Up - Existing Sign in" id="Les-fi-KDJ"/>
+                    <connections>
+                        <outlet property="hobbiesCollectionView" destination="4Vk-oo-aOx" id="zOP-TK-ZNA"/>
+                        <outlet property="latitudeLabel" destination="68K-IJ-Qd4" id="GWk-YE-gB6"/>
+                        <outlet property="longitudeLabel" destination="VvE-W3-aHO" id="R2c-dn-cNU"/>
+                        <outlet property="usernameTextField" destination="tko-bo-VhZ" id="yWj-Ic-fGp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ay-kS-Ow5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,7 +315,7 @@
         <!--Choose up to 3 hobbies-->
         <scene sceneID="oSc-Fg-fMD">
             <objects>
-                <viewController id="Xe6-Xb-sp0" sceneMemberID="viewController">
+                <viewController id="Xe6-Xb-sp0" customClass="EditHobbiesViewController" customModule="hoBshare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MDU-hb-zOd"/>
                         <viewControllerLayoutGuide type="bottom" id="yaP-eV-ddc"/>
@@ -353,6 +374,10 @@
                                         <exclude reference="Hdd-qy-q6G"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xe6-Xb-sp0" id="XLt-nl-mtW"/>
+                                    <outlet property="delegate" destination="Xe6-Xb-sp0" id="HTo-nt-9dQ"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" text="My Hobbies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flj-Wc-FWo">
                                 <rect key="frame" x="251" y="429" width="98" height="21"/>
@@ -411,6 +436,10 @@
                                         <exclude reference="hjF-HO-Gxa"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xe6-Xb-sp0" id="s4z-JC-eJY"/>
+                                    <outlet property="delegate" destination="Xe6-Xb-sp0" id="y88-AZ-n8r"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -432,6 +461,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose up to 3 hobbies" prompt="Scroll up and down. Tap to add" id="VHs-OK-OYq"/>
+                    <connections>
+                        <outlet property="availableHobbiesCollectionView" destination="bR8-ac-e3l" id="zJ3-q1-Le7"/>
+                        <outlet property="hobbiesCollectionView" destination="2WO-Ed-FRn" id="NBa-l5-sux"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivI-ZL-A81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
