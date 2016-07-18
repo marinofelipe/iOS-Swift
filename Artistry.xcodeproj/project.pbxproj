@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DC6B0C21D3D135C00029B0A /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6B0C11D3D135C00029B0A /* ArtistTableViewCell.swift */; };
+		1DC6B0C41D3D755000029B0A /* WorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6B0C31D3D755000029B0A /* WorkTableViewCell.swift */; };
 		A23F75351C9BA757006FA46F /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F75341C9BA757006FA46F /* ArtistDetailViewController.swift */; };
 		A23F75371C9BADB7006FA46F /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F75361C9BADB7006FA46F /* Work.swift */; };
 		A2D7F3091C8CE3F60097399A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7F3081C8CE3F60097399A /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		1DC6B0C11D3D135C00029B0A /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		1DC6B0C31D3D755000029B0A /* WorkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTableViewCell.swift; sourceTree = "<group>"; };
 		A23F75341C9BA757006FA46F /* ArtistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewController.swift; sourceTree = "<group>"; };
 		A23F75361C9BADB7006FA46F /* Work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		A23F753A1C9BC89A006FA46F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				A2D7F30C1C8CE3F60097399A /* Main.storyboard */,
 				1DC6B0C11D3D135C00029B0A /* ArtistTableViewCell.swift */,
+				1DC6B0C31D3D755000029B0A /* WorkTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2D7F31D1C8CE44E0097399A /* Artist.swift in Sources */,
+				1DC6B0C41D3D755000029B0A /* WorkTableViewCell.swift in Sources */,
 				A23F75371C9BADB7006FA46F /* Work.swift in Sources */,
 				A23F75351C9BA757006FA46F /* ArtistDetailViewController.swift in Sources */,
 				A2D7F31F1C8CE4640097399A /* ArtistListViewController.swift in Sources */,
