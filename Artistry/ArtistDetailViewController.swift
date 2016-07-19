@@ -53,15 +53,43 @@ extension ArtistDetailViewController: UITableViewDataSource {
     
     cell.workTitleLabel.backgroundColor = UIColor(red: 204/225, green: 204/225, blue: 204/225, alpha: 1.0)
     cell.workTitleLabel.textAlignment = .Center
+    cell.workTitleLabel.text = work.title
     
     cell.moreInfoTextView.textColor = UIColor(red: 114/225, green: 114/225, blue: 114/225, alpha: 1.0)
-    cell.workTitleLabel.text = work.title
+    cell.moreInfoTextView.text = work.isExpanded ? work.info : moreInfoText
+    cell.moreInfoTextView.textAlignment = work.isExpanded ? NSTextAlignment.Left : NSTextAlignment.Center
     
     cell.selectionStyle = .None
     
     
     return cell
   }
+}
+
+extension ArtistDetailViewController: UITableViewDelegate {
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? WorkTableViewCell else {return}
+    
+    var work = selectedArtist.works[indexPath.row]
+    
+    work.isExpanded = !work.isExpanded
+    selectedArtist.works[indexPath.row] = work
+    
+    cell.moreInfoTextView.text = work.isExpanded ? work.info : moreInfoText
+    cell.moreInfoTextView.textAlignment = work.isExpanded ? .Left : .Center
+    
+    UIView.animateWithDuration(0.3) {
+      cell.contentView.layoutIfNeeded()
+    }
+    
+    tableView.beginUpdates()
+    tableView.endUpdates()
+    
+    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+  }
+  
 }
 
 
