@@ -37,6 +37,14 @@ class ArtistDetailViewController: UIViewController {
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 300
   }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    NSNotificationCenter.defaultCenter().addObserverForName(UIContentSizeCategoryDidChangeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { [weak self] _ in
+      self?.tableView.reloadData()
+    }
+  }
 }
 
 extension ArtistDetailViewController: UITableViewDataSource {
@@ -58,6 +66,9 @@ extension ArtistDetailViewController: UITableViewDataSource {
     cell.moreInfoTextView.textColor = UIColor(red: 114/225, green: 114/225, blue: 114/225, alpha: 1.0)
     cell.moreInfoTextView.text = work.isExpanded ? work.info : moreInfoText
     cell.moreInfoTextView.textAlignment = work.isExpanded ? NSTextAlignment.Left : NSTextAlignment.Center
+    
+    cell.workTitleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+    cell.moreInfoTextView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
     
     cell.selectionStyle = .None
     
