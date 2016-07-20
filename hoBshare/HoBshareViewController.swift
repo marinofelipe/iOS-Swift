@@ -19,12 +19,11 @@ class HoBshareViewController: UIViewController, CLLocationManagerDelegate, UICol
     var myHobbies: [Hobby]? {
         didSet {
             self.hobbiesCollectionView.reloadData()
-            
+            self.saveHobbiesToUserDefaults()
         }
     }
     
     let locationManager = CLLocationManager()
-    
     
     var currentLocation: CLLocation?
     
@@ -125,6 +124,23 @@ class HoBshareViewController: UIViewController, CLLocationManagerDelegate, UICol
         let dynamicCellWidth = availableWidth/CGFloat(numberOfCells!)
         let dynamicCellSize = CGSizeMake(dynamicCellWidth, cellHeight)
         return dynamicCellSize
+    }
+    
+    func saveHobbiesToUserDefaults() {
+        let hobbyData = NSKeyedArchiver.archivedDataWithRootObject(myHobbies!)
+        NSUserDefaults.standardUserDefaults().setValue(hobbyData, forKey: "MyHobbies")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    func showError(message: String) {
+        let alert = UIAlertController(title: kAppTitle, message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        })
+        
+        alert.addAction(okAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
 

@@ -10,6 +10,7 @@
 		AE5289571D3C3E65009EC68D /* HobbyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */; };
 		AE9D4E081D39E8CE006C5866 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D4E071D39E8CE006C5866 /* Models.swift */; };
 		AE9D4E0A1D39E968006C5866 /* DataProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D4E091D39E968006C5866 /* DataProviders.swift */; };
+		AEB163991D3F1DB200AB4203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB163981D3F1DB200AB4203 /* Constants.swift */; };
 		AEC24C151D35B161009AC613 /* SFLBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C131D35B161009AC613 /* SFLBaseModel.swift */; };
 		AEC24C161D35B161009AC613 /* SFLConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C141D35B161009AC613 /* SFLConnection.swift */; };
 		AEC24C181D35B209009AC613 /* HoBshareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C171D35B209009AC613 /* HoBshareViewController.swift */; };
@@ -47,6 +48,7 @@
 		AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE9D4E071D39E8CE006C5866 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../Models.swift; sourceTree = "<group>"; };
 		AE9D4E091D39E968006C5866 /* DataProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviders.swift; sourceTree = "<group>"; };
+		AEB163981D3F1DB200AB4203 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AEC24C131D35B161009AC613 /* SFLBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLBaseModel.swift; path = ../../../../../../../../StarterKit/SFLBaseModel.swift; sourceTree = "<group>"; };
 		AEC24C141D35B161009AC613 /* SFLConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLConnection.swift; path = ../../../../../../../../StarterKit/SFLConnection.swift; sourceTree = "<group>"; };
 		AEC24C171D35B209009AC613 /* HoBshareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoBshareViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				AEDC0BE51D333D5B00C0822B /* ViewController.swift */,
 				AEDC0BE71D333D5B00C0822B /* Main.storyboard */,
 				AEC24C171D35B209009AC613 /* HoBshareViewController.swift */,
+				AEB163981D3F1DB200AB4203 /* Constants.swift */,
 				AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */,
 				AE9D4E071D39E8CE006C5866 /* Models.swift */,
 				AE9D4E091D39E968006C5866 /* DataProviders.swift */,
@@ -301,6 +304,7 @@
 				AEDC0BE41D333D5B00C0822B /* AppDelegate.swift in Sources */,
 				AE5289571D3C3E65009EC68D /* HobbyCollectionViewCell.swift in Sources */,
 				AEC24C161D35B161009AC613 /* SFLConnection.swift in Sources */,
+				AEB163991D3F1DB200AB4203 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

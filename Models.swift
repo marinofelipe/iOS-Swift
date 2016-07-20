@@ -7,13 +7,21 @@
 //
 
 import Foundation
+import MapKit
 
 class User: SFLBaseModel {
-
+    var username: String?
+    var latitude: CLLocationDegrees?
+    var longitude: CLLocationDegrees?
+    
+    init(username: String!) {
+        super.init()
+        self.username = username
+    }
 }
 
 class ListOfUsers: SFLBaseModel {
-    
+
 }
 
 class Hobby: SFLBaseModel {

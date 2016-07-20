@@ -7,10 +7,57 @@
 //
 
 import UIKit
+import MapKit
 
-class MeViewController: HoBshareViewController {
+class MeViewController: HoBshareViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        usernameTextField.delegate = self
+    }
+    
+    override func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        super.locationManager(manager, didUpdateLocations: locations)
+        
+        latitudeLabel.text = "Latitude: " + "\(currentLocation!.coordinate.latitude)"
+        longitudeLabel.text = "Longitude: " + "\(currentLocation!.coordinate.longitude)"
+    }
+    
+    func validate() -> Bool {
+        var valid = false
+        if usernameTextField.text != nil && usernameTextField.text?.characters.count > 0 {
+            valid = true
+        }
+        return valid
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if validate() == true {
+            submit()
+        }
+        return true
+    }
+    
+    func submit() {
+        usernameTextField.resignFirstResponder()
+        let requestUser = User(username: usernameTextField.text!)
+        requestUser.latitude = currentLocation?.coordinate.latitude
+        requestUser.longitude = currentLocation?.coordinate.longitude
+        
+        UserDP().getAccountForUser(requestUser) { (returnedUser) in {
+            if returnedUser.status.code == 0 {
+                self.myHobbies = returnedUser.hobbies
+                NSUserDefaults.standardUserDefaults().setValue(returnedUser.userId, forKey: "CurrentUserId")
+                NSUserDefaults().synchronize()
+            }
+            else {
+                self.showError(returnedUser.status.statusDescription!)
+            }
+        }
+    }
 }
