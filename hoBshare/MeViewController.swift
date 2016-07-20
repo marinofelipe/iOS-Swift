@@ -15,6 +15,12 @@ class MeViewController: HoBshareViewController, UITextFieldDelegate {
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+        if validate() == true {
+            submit()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +45,9 @@ class MeViewController: HoBshareViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if validate() == true {
             submit()
+        }
+        else {
+            self.showError("Did you enter a username?")
         }
         return true
     }

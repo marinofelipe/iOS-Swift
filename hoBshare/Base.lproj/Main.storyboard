@@ -266,7 +266,13 @@
                             <constraint firstItem="vEL-ub-p3f" firstAttribute="top" secondItem="4Vk-oo-aOx" secondAttribute="bottom" constant="13" id="zsa-va-wfQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Me" prompt="New username Sign Up - Existing Sign in" id="Les-fi-KDJ"/>
+                    <navigationItem key="navigationItem" title="Me" prompt="New username Sign Up - Existing Sign in" id="Les-fi-KDJ">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="DQZ-qB-CYG">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="i6b-Qp-o2k" id="eew-Z8-6Cm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="hobbiesCollectionView" destination="4Vk-oo-aOx" id="zOP-TK-ZNA"/>
                         <outlet property="latitudeLabel" destination="68K-IJ-Qd4" id="GWk-YE-gB6"/>
