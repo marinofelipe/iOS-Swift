@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		AE5289571D3C3E65009EC68D /* HobbyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */; };
+		AE5295A21D418AAE003B5542 /* SFLBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5295A01D418AAE003B5542 /* SFLBaseModel.swift */; };
+		AE5295A31D418AAE003B5542 /* SFLConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5295A11D418AAE003B5542 /* SFLConnection.swift */; };
 		AE9D4E081D39E8CE006C5866 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D4E071D39E8CE006C5866 /* Models.swift */; };
 		AE9D4E0A1D39E968006C5866 /* DataProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D4E091D39E968006C5866 /* DataProviders.swift */; };
 		AEB163991D3F1DB200AB4203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB163981D3F1DB200AB4203 /* Constants.swift */; };
-		AEC24C151D35B161009AC613 /* SFLBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C131D35B161009AC613 /* SFLBaseModel.swift */; };
-		AEC24C161D35B161009AC613 /* SFLConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C141D35B161009AC613 /* SFLConnection.swift */; };
 		AEC24C181D35B209009AC613 /* HoBshareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C171D35B209009AC613 /* HoBshareViewController.swift */; };
 		AEC24C1A1D35B24C009AC613 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C191D35B24C009AC613 /* MeViewController.swift */; };
 		AEC24C1C1D35B281009AC613 /* EditHobbiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */; };
@@ -46,11 +46,11 @@
 
 /* Begin PBXFileReference section */
 		AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewCell.swift; sourceTree = "<group>"; };
-		AE9D4E071D39E8CE006C5866 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../Models.swift; sourceTree = "<group>"; };
+		AE5295A01D418AAE003B5542 /* SFLBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFLBaseModel.swift; sourceTree = "<group>"; };
+		AE5295A11D418AAE003B5542 /* SFLConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFLConnection.swift; sourceTree = "<group>"; };
+		AE9D4E071D39E8CE006C5866 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		AE9D4E091D39E968006C5866 /* DataProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviders.swift; sourceTree = "<group>"; };
 		AEB163981D3F1DB200AB4203 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		AEC24C131D35B161009AC613 /* SFLBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLBaseModel.swift; path = ../../../../../../../../StarterKit/SFLBaseModel.swift; sourceTree = "<group>"; };
-		AEC24C141D35B161009AC613 /* SFLConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLConnection.swift; path = ../../../../../../../../StarterKit/SFLConnection.swift; sourceTree = "<group>"; };
 		AEC24C171D35B209009AC613 /* HoBshareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoBshareViewController.swift; sourceTree = "<group>"; };
 		AEC24C191D35B24C009AC613 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHobbiesViewController.swift; sourceTree = "<group>"; };
@@ -128,12 +128,12 @@
 				AEB163981D3F1DB200AB4203 /* Constants.swift */,
 				AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */,
 				AE9D4E071D39E8CE006C5866 /* Models.swift */,
+				AE5295A01D418AAE003B5542 /* SFLBaseModel.swift */,
+				AE5295A11D418AAE003B5542 /* SFLConnection.swift */,
 				AE9D4E091D39E968006C5866 /* DataProviders.swift */,
 				AEC24C191D35B24C009AC613 /* MeViewController.swift */,
 				AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */,
 				AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */,
-				AEC24C131D35B161009AC613 /* SFLBaseModel.swift */,
-				AEC24C141D35B161009AC613 /* SFLConnection.swift */,
 				AEDC0BEA1D333D5B00C0822B /* Assets.xcassets */,
 				AEDC0BEC1D333D5B00C0822B /* LaunchScreen.storyboard */,
 				AEDC0BEF1D333D5B00C0822B /* Info.plist */,
@@ -296,14 +296,14 @@
 				AEC24C1E1D35B2AD009AC613 /* NeighborsViewController.swift in Sources */,
 				AEC24C1A1D35B24C009AC613 /* MeViewController.swift in Sources */,
 				AE9D4E0A1D39E968006C5866 /* DataProviders.swift in Sources */,
-				AEC24C151D35B161009AC613 /* SFLBaseModel.swift in Sources */,
 				AEC24C181D35B209009AC613 /* HoBshareViewController.swift in Sources */,
 				AEC24C1C1D35B281009AC613 /* EditHobbiesViewController.swift in Sources */,
 				AEDC0BE61D333D5B00C0822B /* ViewController.swift in Sources */,
 				AE9D4E081D39E8CE006C5866 /* Models.swift in Sources */,
+				AE5295A31D418AAE003B5542 /* SFLConnection.swift in Sources */,
 				AEDC0BE41D333D5B00C0822B /* AppDelegate.swift in Sources */,
 				AE5289571D3C3E65009EC68D /* HobbyCollectionViewCell.swift in Sources */,
-				AEC24C161D35B161009AC613 /* SFLConnection.swift in Sources */,
+				AE5295A21D418AAE003B5542 /* SFLBaseModel.swift in Sources */,
 				AEB163991D3F1DB200AB4203 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
