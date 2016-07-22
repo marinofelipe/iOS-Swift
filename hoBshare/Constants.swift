@@ -9,3 +9,11 @@
 import Foundation
 
 let kAppTitle = "hoBshare"
+
+let kUserId = "UserId"
+let kUsername = "Username"
+let kLatitude = "Latitude"
+let kLongitude = "Longitude"
+let kHobbies = "Hobbies"
+let kHobbyName = "HobbyName"
+let kHobbySearch = "HobbySearch"
