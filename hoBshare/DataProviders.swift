@@ -8,8 +8,26 @@
 
 import Foundation
 
-class UserDP: NSObject {
+let serverPath = "http://uci.smilefish.com/HBSRest-dev/api/"
+let endpoint = "HobbyRest"
 
+class UserDP: NSObject {
+    
+    func getAccountForUser(user: User, completion: (User) -> ()) {
+        let requestUrlString = serverPath + endpoint
+        let HTTPMethod = "CREATE_USER"
+        let requestModel = user
+        
+        SFLConnection().ajax(requestUrlString, verb: HTTPMethod, requestBody: requestModel) { (returnJSONDict) in
+            
+            let dict = NSDictionary(dictionary: returnJSONDict)
+            
+            let returnedUser = User()
+            returnedUser.readFromJSONDictionary(dict)
+            
+            completion(returnedUser)
+        }
+    }
 }
 
 class HobbyDP: NSObject {

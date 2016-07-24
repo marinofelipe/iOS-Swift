@@ -58,7 +58,8 @@ class MeViewController: HoBshareViewController, UITextFieldDelegate {
         requestUser.latitude = currentLocation?.coordinate.latitude
         requestUser.longitude = currentLocation?.coordinate.longitude
         
-        UserDP().getAccountForUser(requestUser) { (returnedUser) in {
+        UserDP().getAccountForUser(requestUser) { (returnedUser) in
+            
             if returnedUser.status.code == 0 {
                 self.myHobbies = returnedUser.hobbies
                 NSUserDefaults.standardUserDefaults().setValue(returnedUser.userId, forKey: "CurrentUserId")

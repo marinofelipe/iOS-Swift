@@ -14,7 +14,7 @@ class User: SFLBaseModel, JSONSerializable {
     var username: String?
     var latitude: Double?
     var longitude: Double?
-    var hobbies: [Hobby]
+    var hobbies = [Hobby]()
     var searchHobby: Hobby?
     
     override init() {

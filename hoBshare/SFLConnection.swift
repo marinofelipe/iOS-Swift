@@ -25,6 +25,9 @@ class SFLConnection : NSObject, NSURLSessionDelegate, NSURLSessionDataDelegate {
         
         let jsonData = NSData(bytes: jsonRequest.UTF8String, length: jsonRequest.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
         
+        
+        
+        
         let requestURL = NSURL(string: url as String)
         
         let request = NSMutableURLRequest(URL: requestURL!)
