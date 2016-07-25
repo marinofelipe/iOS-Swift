@@ -215,7 +215,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sVw-iZ-yq3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sVw-iZ-yq3">
                                                     <rect key="frame" x="8" y="8" width="84" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -225,6 +225,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="sVw-iZ-yq3" firstAttribute="bottom" secondItem="9mR-bF-kqJ" secondAttribute="bottomMargin" id="C96-Fe-5BQ"/>
+                                            <constraint firstItem="sVw-iZ-yq3" firstAttribute="leading" secondItem="9mR-bF-kqJ" secondAttribute="leadingMargin" id="QcY-HY-w8t"/>
+                                            <constraint firstItem="sVw-iZ-yq3" firstAttribute="trailing" secondItem="9mR-bF-kqJ" secondAttribute="trailingMargin" id="hyg-un-mPx"/>
+                                            <constraint firstItem="sVw-iZ-yq3" firstAttribute="top" secondItem="9mR-bF-kqJ" secondAttribute="topMargin" id="j1d-9i-Vec"/>
+                                        </constraints>
                                         <size key="customSize" width="100" height="50"/>
                                         <connections>
                                             <outlet property="hobbyLabel" destination="sVw-iZ-yq3" id="x00-H8-Qyd"/>
@@ -369,9 +375,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1j6-Qg-rAy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1j6-Qg-rAy">
                                                     <rect key="frame" x="8" y="8" width="84" height="34"/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -379,6 +384,13 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="bottom" secondItem="CZA-Io-vnq" secondAttribute="bottomMargin" id="81A-8f-SIk"/>
+                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="leading" secondItem="CZA-Io-vnq" secondAttribute="leadingMargin" id="AUg-zp-CeM"/>
+                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="top" secondItem="CZA-Io-vnq" secondAttribute="topMargin" id="Bbh-T9-NG3"/>
+                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="trailing" secondItem="CZA-Io-vnq" secondAttribute="trailingMargin" id="lCQ-dR-6dZ"/>
+                                        </constraints>
                                         <size key="customSize" width="100" height="50"/>
                                         <connections>
                                             <outlet property="hobbyLabel" destination="1j6-Qg-rAy" id="VTL-WA-9Yj"/>
@@ -424,9 +436,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bKG-bh-iUs">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bKG-bh-iUs">
                                                     <rect key="frame" x="8" y="8" width="84" height="34"/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -434,6 +445,13 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="bKG-bh-iUs" firstAttribute="bottom" secondItem="FOF-KY-2lx" secondAttribute="bottomMargin" id="Y3a-2P-zFE"/>
+                                            <constraint firstItem="bKG-bh-iUs" firstAttribute="leading" secondItem="FOF-KY-2lx" secondAttribute="leadingMargin" id="asT-Ua-fmD"/>
+                                            <constraint firstItem="bKG-bh-iUs" firstAttribute="top" secondItem="FOF-KY-2lx" secondAttribute="topMargin" id="bVo-tT-naF"/>
+                                            <constraint firstItem="bKG-bh-iUs" firstAttribute="trailing" secondItem="FOF-KY-2lx" secondAttribute="trailingMargin" id="ynl-zY-jCj"/>
+                                        </constraints>
                                         <size key="customSize" width="100" height="50"/>
                                         <connections>
                                             <outlet property="hobbyLabel" destination="bKG-bh-iUs" id="PTp-6k-p2F"/>
