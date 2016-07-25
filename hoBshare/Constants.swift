@@ -17,3 +17,5 @@ let kLongitude = "Longitude"
 let kHobbies = "Hobbies"
 let kHobbyName = "HobbyName"
 let kHobbySearch = "HobbySearch"
+
+let kMaxHobbies = 3

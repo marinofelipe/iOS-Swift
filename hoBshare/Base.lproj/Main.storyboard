@@ -350,6 +350,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="400" verticalCompressionResistancePriority="810" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-Ed-FRn">
                                 <rect key="frame" x="20" y="487" width="560" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="Hdd-qy-q6G"/>
                                     <constraint firstAttribute="height" constant="56" id="XnH-s8-6Ra"/>
@@ -370,6 +371,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1j6-Qg-rAy">
                                                     <rect key="frame" x="8" y="8" width="84" height="34"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -378,6 +380,9 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="100" height="50"/>
+                                        <connections>
+                                            <outlet property="hobbyLabel" destination="1j6-Qg-rAy" id="VTL-WA-9Yj"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <variation key="default">
@@ -401,6 +406,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bR8-ac-e3l">
                                 <rect key="frame" x="20" y="102" width="560" height="309"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="309" id="hjF-HO-Gxa"/>
                                 </constraints>
@@ -420,6 +426,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bKG-bh-iUs">
                                                     <rect key="frame" x="8" y="8" width="84" height="34"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -428,19 +435,33 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="100" height="50"/>
+                                        <connections>
+                                            <outlet property="hobbyLabel" destination="bKG-bh-iUs" id="PTp-6k-p2F"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rQ9-Zu-oNB">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HobbyCategoryHeader" id="rQ9-Zu-oNB" customClass="HobbiesCollectionViewHeader" customModule="hoBshare" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="560" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TECHNOLOGY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="En7-oH-FT3">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TECHNOLOGY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="En7-oH-FT3">
                                             <rect key="frame" x="167" y="8" width="227" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="227" id="Ssy-95-fl9"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="En7-oH-FT3" firstAttribute="bottom" secondItem="rQ9-Zu-oNB" secondAttribute="bottomMargin" id="9Zc-1w-hoK"/>
+                                        <constraint firstItem="En7-oH-FT3" firstAttribute="centerX" secondItem="rQ9-Zu-oNB" secondAttribute="centerX" id="GUl-Cn-Xn2"/>
+                                        <constraint firstItem="En7-oH-FT3" firstAttribute="top" secondItem="rQ9-Zu-oNB" secondAttribute="topMargin" id="OvX-Vo-oZF"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="categoryLabel" destination="En7-oH-FT3" id="hrj-mC-pnU"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <variation key="default">
                                     <mask key="constraints">

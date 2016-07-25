@@ -52,4 +52,18 @@ class HobbyDP: NSObject {
             Hobby(hobbyName:"Microsoft")]]
         
     }
+    
+    func saveHobbiesForUser(user: User, completion: (User) -> ()) {
+        let requestUrlString = serverPath + endpoint
+        let HTTPMethod = "SAVE_HOBBIES"
+        let requestModel = user
+        
+        SFLConnection().ajax(requestUrlString, verb: HTTPMethod, requestBody: requestModel) { (returnJSONDict) in
+            
+            let returnedUser = User()
+            returnedUser.readFromJSONDictionary(returnJSONDict)
+            
+            completion(returnedUser)
+        }
+    }
 }

@@ -143,6 +143,7 @@ class HoBshareViewController: UIViewController, CLLocationManagerDelegate, UICol
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    
 
     /*
     // MARK: - Navigation
