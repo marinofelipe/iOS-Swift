@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class NeighborsViewController: HoBshareViewController {
+class NeighborsViewController: HoBshareViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -17,7 +17,7 @@ class NeighborsViewController: HoBshareViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        mapView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

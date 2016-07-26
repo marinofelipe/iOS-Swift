@@ -19,7 +19,6 @@
 		AEC24C1C1D35B281009AC613 /* EditHobbiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */; };
 		AEC24C1E1D35B2AD009AC613 /* NeighborsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */; };
 		AEDC0BE41D333D5B00C0822B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC0BE31D333D5B00C0822B /* AppDelegate.swift */; };
-		AEDC0BE61D333D5B00C0822B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC0BE51D333D5B00C0822B /* ViewController.swift */; };
 		AEDC0BE91D333D5B00C0822B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDC0BE71D333D5B00C0822B /* Main.storyboard */; };
 		AEDC0BEB1D333D5B00C0822B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDC0BEA1D333D5B00C0822B /* Assets.xcassets */; };
 		AEDC0BEE1D333D5B00C0822B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDC0BEC1D333D5B00C0822B /* LaunchScreen.storyboard */; };
@@ -46,24 +45,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AE45DA211D44727F002FCB87 /* HobbiesCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbiesCollectionViewHeader.swift; sourceTree = "<group>"; };
-		AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewCell.swift; sourceTree = "<group>"; };
-		AE5295A01D418AAE003B5542 /* SFLBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFLBaseModel.swift; sourceTree = "<group>"; };
-		AE5295A11D418AAE003B5542 /* SFLConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFLConnection.swift; sourceTree = "<group>"; };
-		AE9D4E071D39E8CE006C5866 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		AE9D4E091D39E968006C5866 /* DataProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviders.swift; sourceTree = "<group>"; };
-		AEB163981D3F1DB200AB4203 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		AEC24C171D35B209009AC613 /* HoBshareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoBshareViewController.swift; sourceTree = "<group>"; };
-		AEC24C191D35B24C009AC613 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
-		AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHobbiesViewController.swift; sourceTree = "<group>"; };
-		AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeighborsViewController.swift; sourceTree = "<group>"; };
+		AE45DA211D44727F002FCB87 /* HobbiesCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HobbiesCollectionViewHeader.swift; path = "UI/Generic UI/HobbiesCollectionViewHeader.swift"; sourceTree = "<group>"; };
+		AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HobbyCollectionViewCell.swift; path = "UI/Generic UI/HobbyCollectionViewCell.swift"; sourceTree = "<group>"; };
+		AE5295A01D418AAE003B5542 /* SFLBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLBaseModel.swift; path = Components/Network/SFLBaseModel.swift; sourceTree = "<group>"; };
+		AE5295A11D418AAE003B5542 /* SFLConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLConnection.swift; path = Components/Network/SFLConnection.swift; sourceTree = "<group>"; };
+		AE9D4E071D39E8CE006C5866 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Components/Models/Models.swift; sourceTree = "<group>"; };
+		AE9D4E091D39E968006C5866 /* DataProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProviders.swift; path = "Components/Data Providers/DataProviders.swift"; sourceTree = "<group>"; };
+		AEB163981D3F1DB200AB4203 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Components/Constants/Constants.swift; sourceTree = "<group>"; };
+		AEC24C171D35B209009AC613 /* HoBshareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoBshareViewController.swift; path = UI/ViewControllers/HoBshareViewController.swift; sourceTree = "<group>"; };
+		AEC24C191D35B24C009AC613 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeViewController.swift; path = UI/ViewControllers/MeViewController.swift; sourceTree = "<group>"; };
+		AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditHobbiesViewController.swift; path = UI/ViewControllers/EditHobbiesViewController.swift; sourceTree = "<group>"; };
+		AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeighborsViewController.swift; path = UI/ViewControllers/NeighborsViewController.swift; sourceTree = "<group>"; };
 		AEDC0BE01D333D5A00C0822B /* hoBshare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hoBshare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDC0BE31D333D5B00C0822B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AEDC0BE51D333D5B00C0822B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AEDC0BE81D333D5B00C0822B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AEDC0BEA1D333D5B00C0822B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AEDC0BEA1D333D5B00C0822B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		AEDC0BED1D333D5B00C0822B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AEDC0BEF1D333D5B00C0822B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEDC0BEF1D333D5B00C0822B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		AEDC0BF41D333D5B00C0822B /* hoBshareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hoBshareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDC0BF81D333D5B00C0822B /* hoBshareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hoBshareTests.swift; sourceTree = "<group>"; };
 		AEDC0BFA1D333D5B00C0822B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +97,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE2C20A41D46F3E80075E44D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AE2C20A71D46F4150075E44D /* Data Providers */,
+				AE2C20A51D46F3FC0075E44D /* Constants */,
+				AE94D8BD1D46FB9A00500563 /* Network */,
+				AE2C20A61D46F4110075E44D /* Models */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		AE2C20A51D46F3FC0075E44D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AEB163981D3F1DB200AB4203 /* Constants.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		AE2C20A61D46F4110075E44D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE9D4E071D39E8CE006C5866 /* Models.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AE2C20A71D46F4150075E44D /* Data Providers */ = {
+			isa = PBXGroup;
+			children = (
+				AE9D4E091D39E968006C5866 /* DataProviders.swift */,
+			);
+			name = "Data Providers";
+			sourceTree = "<group>";
+		};
+		AE2C20A81D46F4730075E44D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AEDC0BEA1D333D5B00C0822B /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AE2C20A91D46F48B0075E44D /* Suporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEDC0BEF1D333D5B00C0822B /* Info.plist */,
+			);
+			name = "Suporting Files";
+			sourceTree = "<group>";
+		};
+		AE2C20AA1D46F4A20075E44D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AE2C20AB1D46F4A60075E44D /* Generic UI */,
+				AE2C20AC1D46F4B00075E44D /* ViewControllers */,
+				AE2C20AD1D46F4B50075E44D /* Views */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		AE2C20AB1D46F4A60075E44D /* Generic UI */ = {
+			isa = PBXGroup;
+			children = (
+				AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */,
+				AE45DA211D44727F002FCB87 /* HobbiesCollectionViewHeader.swift */,
+			);
+			name = "Generic UI";
+			sourceTree = "<group>";
+		};
+		AE2C20AC1D46F4B00075E44D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AEC24C171D35B209009AC613 /* HoBshareViewController.swift */,
+				AEC24C191D35B24C009AC613 /* MeViewController.swift */,
+				AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */,
+				AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AE2C20AD1D46F4B50075E44D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AEDC0BE71D333D5B00C0822B /* Main.storyboard */,
+				AEDC0BEC1D333D5B00C0822B /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AE94D8BD1D46FB9A00500563 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AE5295A11D418AAE003B5542 /* SFLConnection.swift */,
+				AE5295A01D418AAE003B5542 /* SFLBaseModel.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		AEDC0BD71D333D5A00C0822B = {
 			isa = PBXGroup;
 			children = (
@@ -124,22 +221,10 @@
 			isa = PBXGroup;
 			children = (
 				AEDC0BE31D333D5B00C0822B /* AppDelegate.swift */,
-				AEDC0BE51D333D5B00C0822B /* ViewController.swift */,
-				AEDC0BE71D333D5B00C0822B /* Main.storyboard */,
-				AEC24C171D35B209009AC613 /* HoBshareViewController.swift */,
-				AEB163981D3F1DB200AB4203 /* Constants.swift */,
-				AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */,
-				AE9D4E071D39E8CE006C5866 /* Models.swift */,
-				AE5295A01D418AAE003B5542 /* SFLBaseModel.swift */,
-				AE5295A11D418AAE003B5542 /* SFLConnection.swift */,
-				AE9D4E091D39E968006C5866 /* DataProviders.swift */,
-				AEC24C191D35B24C009AC613 /* MeViewController.swift */,
-				AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */,
-				AE45DA211D44727F002FCB87 /* HobbiesCollectionViewHeader.swift */,
-				AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */,
-				AEDC0BEA1D333D5B00C0822B /* Assets.xcassets */,
-				AEDC0BEC1D333D5B00C0822B /* LaunchScreen.storyboard */,
-				AEDC0BEF1D333D5B00C0822B /* Info.plist */,
+				AE2C20A41D46F3E80075E44D /* Components */,
+				AE2C20A81D46F4730075E44D /* Resources */,
+				AE2C20A91D46F48B0075E44D /* Suporting Files */,
+				AE2C20AA1D46F4A20075E44D /* UI */,
 			);
 			path = hoBshare;
 			sourceTree = "<group>";
@@ -301,7 +386,6 @@
 				AE9D4E0A1D39E968006C5866 /* DataProviders.swift in Sources */,
 				AEC24C181D35B209009AC613 /* HoBshareViewController.swift in Sources */,
 				AEC24C1C1D35B281009AC613 /* EditHobbiesViewController.swift in Sources */,
-				AEDC0BE61D333D5B00C0822B /* ViewController.swift in Sources */,
 				AE45DA221D44727F002FCB87 /* HobbiesCollectionViewHeader.swift in Sources */,
 				AE9D4E081D39E8CE006C5866 /* Models.swift in Sources */,
 				AE5295A31D418AAE003B5542 /* SFLConnection.swift in Sources */,
@@ -350,7 +434,8 @@
 				AEDC0BE81D333D5B00C0822B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
+			path = hoBshare;
+			sourceTree = SOURCE_ROOT;
 		};
 		AEDC0BEC1D333D5B00C0822B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -452,7 +537,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = hoBshare/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "hoBshare/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipemarino.hoBshare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,7 +549,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = hoBshare/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "hoBshare/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipemarino.hoBshare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
