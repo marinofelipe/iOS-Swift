@@ -28,6 +28,27 @@ class UserDP: NSObject {
             completion(returnedUser)
         }
     }
+    
+    func fetchUsersForHobby(user: User, hobby: Hobby, completion: (ListOfUsers) -> ()) {
+        // get everything that we need
+        let requestUrlString = serverPath + endpoint
+        let HTTPMethod = "FETCH_USERS_WITH_HOBBY"
+        let requestModel = user
+        
+        // combine the extra hobby parameter into the request for this special search type REST call
+        requestModel.searchHobby = hobby
+        
+        // create the connection (it will start imediately once created)
+        SFLConnection().ajax(requestUrlString, verb: HTTPMethod, requestBody: requestModel) { (returnJSONDict) in
+            
+            let dict = NSDictionary(dictionary: returnJSONDict)
+            let returnedListOfUsers = ListOfUsers()
+            
+            returnedListOfUsers.readFromJSONDictionary(dict)
+            
+            completion(returnedListOfUsers)
+        }
+    }
 }
 
 class HobbyDP: NSObject {

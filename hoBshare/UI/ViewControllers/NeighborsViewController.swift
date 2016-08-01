@@ -83,7 +83,36 @@ class NeighborsViewController: HoBshareViewController, MKMapViewDelegate {
             
             if returnedListOfUsers.status.code == 0 {
                 self.users = returnedListOfUsers.users
+                
+                //  remove users annotations from last hobby
+                if let users = self.users {
+                    self.mapView.removeAnnotations(users)
+                    
+                    // create a pin for each user and add it to the map
+                    for user in users {
+                        self.mapView.addAnnotation(user)
+                    }
+                    
+                    //  zoom to show the nearest users in relation to the user's current position
+                    if self.currentLocation != nil {
+                        let me = User(name: "Me", hobbies: myHobbies!, lat: currentLocation!.coordinate.latitude, long: currentLocation!.coordinate.latitude)
+                        
+                        self.mapView.addAnnotation(me)
+                        
+                        let neighborsAndMe = users + [me]
+                        
+                        self.mapView.showAnnotations(neighborsAndMe, animated: true)
+                    }
+                    else {
+                        self.mapView.showAnnotations(users, animated: true)
+                    }
+                }
             }
+            else {
+                self.showError(returnedListOfUsers.status.statusDescription!)
+            }
+        }
     }
 
+    
 }
