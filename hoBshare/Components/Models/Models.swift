@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class User: SFLBaseModel, JSONSerializable {
+class User: SFLBaseModel, JSONSerializable, MKAnnotation {
     var userId: String?
     var username: String?
     var latitude: Double?
@@ -75,10 +75,65 @@ class User: SFLBaseModel, JSONSerializable {
         }
     }
     
+    var coordinate: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2D(latitude:  self.latitude!, longitude: self.longitude!)
+        }
+    }
+    
+    var title: String? {
+        get {
+            return self.username
+        }
+    }
+    
+    var subtitle: String? {
+        get {
+            var hobbiesAsString = ""
+            
+            print(self.username! + ": " + hobbies.toString())
+            
+            hobbiesAsString = hobbies.toString()
+            
+            return hobbiesAsString
+        }
+    }
+    
 }
 
 class ListOfUsers: SFLBaseModel, JSONSerializable {
-
+    
+    var users = [User]()
+    
+    override init() {
+        super.init()
+        self.delegate = self
+    }
+    
+    override func readFromJSONDictionary(dict: NSDictionary) {
+        super.readFromJSONDictionary(dict)
+        
+        if let returnedUsers = dict["ListOfUsers"] as? NSArray {
+            
+            for dict in returnedUsers {
+                
+                let user = User()
+                user.readFromJSONDictionary(dict as! NSDictionary)
+                self.users.append(user)
+            }
+        }
+    }
+    
+    override func getJSONDictionary() -> NSDictionary {
+        let dict = super.getJSONDictionary()
+        return dict
+    }
+    
+    override func getJSONDictionaryString() -> NSString {
+        return super.getJSONDictionaryString()
+    }
+    
+    
 }
 
 class Hobby: SFLBaseModel, NSCoding {
