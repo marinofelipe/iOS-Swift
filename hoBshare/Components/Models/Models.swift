@@ -9,6 +9,38 @@
 import Foundation
 import MapKit
 
+extension Array {
+    
+    var allValuesAreHobbies: Bool {
+        var returnValue = true
+        
+        for value in self {
+            if value is Hobby == false {
+                returnValue = false
+            }
+        }
+        return returnValue
+    }
+    
+    func toString() -> String {
+        var returnString = ""
+        
+        if allValuesAreHobbies == true {
+            for i in 0...self.count - 1 {
+                let value = self[i] as! Hobby
+                
+                if i == 0 {
+                    returnString += value.hobbyName!
+                }
+                else {
+                    returnString += ", " + value.hobbyName!
+                }
+            }
+        }
+        return returnString
+    }
+}
+
 class User: SFLBaseModel, JSONSerializable, MKAnnotation {
     var userId: String?
     var username: String?
@@ -26,6 +58,13 @@ class User: SFLBaseModel, JSONSerializable, MKAnnotation {
         super.init()
         self.delegate = self
         self.username = username
+    }
+    
+    convenience init(username: String, hobbies: [Hobby], lat: Double, long: Double) {
+        self.init(username: username)
+        self.latitude = lat
+        self.longitude = long
+        self.hobbies = hobbies
     }
     
     

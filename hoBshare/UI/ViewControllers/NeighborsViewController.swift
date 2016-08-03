@@ -46,7 +46,7 @@ class NeighborsViewController: HoBshareViewController, MKMapViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         if let users = self.users {
-            mapView.removeAnnotation(users)
+            mapView.removeAnnotations(users)
         }
         
         self.fetchUsersWithHobby(myHobbies![indexPath.row])
@@ -96,7 +96,7 @@ class NeighborsViewController: HoBshareViewController, MKMapViewDelegate {
                     
                     //  zoom to show the nearest users in relation to the user's current position
                     if self.currentLocation != nil {
-                        let me = User(name: "Me", hobbies: myHobbies!, lat: currentLocation!.coordinate.latitude, long: currentLocation!.coordinate.latitude)
+                        let me = User(username: "Me", hobbies: self.myHobbies!, lat: self.currentLocation!.coordinate.latitude, long: self.currentLocation!.coordinate.latitude)
                         
                         self.mapView.addAnnotation(me)
                         

@@ -50,6 +50,7 @@
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="400" verticalCompressionResistancePriority="810" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MUR-1R-XWq">
                                 <rect key="frame" x="20" y="487" width="560" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="AhX-XW-oSe"/>
                                     <constraint firstAttribute="height" constant="56" id="lg4-ur-w5R"/>
@@ -61,7 +62,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="R2p-Zx-jp9">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HobbyCollectionViewCell" id="R2p-Zx-jp9" customClass="HobbyCollectionViewCell" customModule="hoBshare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -77,7 +78,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <size key="customSize" width="100" height="50"/>
+                                        <connections>
+                                            <outlet property="hobbyLabel" destination="qGf-8T-Fuk" id="T9n-Zk-6Mp"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <variation key="default">
@@ -354,59 +359,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="400" verticalCompressionResistancePriority="810" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-Ed-FRn">
-                                <rect key="frame" x="20" y="487" width="560" height="56"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="Hdd-qy-q6G"/>
-                                    <constraint firstAttribute="height" constant="56" id="XnH-s8-6Ra"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j9K-en-5uf">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HobbyCollectionViewCell" id="CZA-Io-vnq" customClass="HobbyCollectionViewCell" customModule="hoBshare" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1j6-Qg-rAy">
-                                                    <rect key="frame" x="8" y="8" width="84" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="bottom" secondItem="CZA-Io-vnq" secondAttribute="bottomMargin" id="81A-8f-SIk"/>
-                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="leading" secondItem="CZA-Io-vnq" secondAttribute="leadingMargin" id="AUg-zp-CeM"/>
-                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="top" secondItem="CZA-Io-vnq" secondAttribute="topMargin" id="Bbh-T9-NG3"/>
-                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="trailing" secondItem="CZA-Io-vnq" secondAttribute="trailingMargin" id="lCQ-dR-6dZ"/>
-                                        </constraints>
-                                        <size key="customSize" width="100" height="50"/>
-                                        <connections>
-                                            <outlet property="hobbyLabel" destination="1j6-Qg-rAy" id="VTL-WA-9Yj"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Hdd-qy-q6G"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="Xe6-Xb-sp0" id="XLt-nl-mtW"/>
-                                    <outlet property="delegate" destination="Xe6-Xb-sp0" id="HTo-nt-9dQ"/>
-                                </connections>
-                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" text="My Hobbies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flj-Wc-FWo">
                                 <rect key="frame" x="251" y="429" width="98" height="21"/>
                                 <constraints>
@@ -489,6 +441,59 @@
                                 <connections>
                                     <outlet property="dataSource" destination="Xe6-Xb-sp0" id="s4z-JC-eJY"/>
                                     <outlet property="delegate" destination="Xe6-Xb-sp0" id="y88-AZ-n8r"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="400" verticalCompressionResistancePriority="810" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-Ed-FRn">
+                                <rect key="frame" x="20" y="487" width="560" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="Hdd-qy-q6G"/>
+                                    <constraint firstAttribute="height" constant="56" id="XnH-s8-6Ra"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j9K-en-5uf">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HobbyCollectionViewCell" id="CZA-Io-vnq" customClass="HobbyCollectionViewCell" customModule="hoBshare" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1j6-Qg-rAy">
+                                                    <rect key="frame" x="8" y="8" width="84" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="bottom" secondItem="CZA-Io-vnq" secondAttribute="bottomMargin" id="81A-8f-SIk"/>
+                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="leading" secondItem="CZA-Io-vnq" secondAttribute="leadingMargin" id="AUg-zp-CeM"/>
+                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="top" secondItem="CZA-Io-vnq" secondAttribute="topMargin" id="Bbh-T9-NG3"/>
+                                            <constraint firstItem="1j6-Qg-rAy" firstAttribute="trailing" secondItem="CZA-Io-vnq" secondAttribute="trailingMargin" id="lCQ-dR-6dZ"/>
+                                        </constraints>
+                                        <size key="customSize" width="100" height="50"/>
+                                        <connections>
+                                            <outlet property="hobbyLabel" destination="1j6-Qg-rAy" id="VTL-WA-9Yj"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Hdd-qy-q6G"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xe6-Xb-sp0" id="XLt-nl-mtW"/>
+                                    <outlet property="delegate" destination="Xe6-Xb-sp0" id="HTo-nt-9dQ"/>
                                 </connections>
                             </collectionView>
                         </subviews>
