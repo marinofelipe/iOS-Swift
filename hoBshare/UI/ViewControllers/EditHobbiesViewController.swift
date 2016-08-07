@@ -12,12 +12,41 @@ class EditHobbiesViewController: HoBshareViewController {
 
     @IBOutlet weak var availableHobbiesCollectionView: UICollectionView!
     
+    var replaceEnabled: Bool = false {
+        didSet {
+            hobbiesCollectionView.reloadData()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.availableHobbiesCollectionView.delegate = self
         
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {   
+        let cell: ReplaceableHobbyCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("HobbyCollectionViewCell", forIndexPath: indexPath) as! ReplaceableHobbyCollectionViewCell
+        
+        if collectionView == hobbiesCollectionView {
+            let hobby = myHobbies![indexPath.item]
+            cell.hobbyLabel.text = hobby.hobbyName
+            if replaceEnabled == true {
+                cell.replaceButton.hidden = false
+            }
+            else {
+                cell.replaceButton.hidden = true
+            }
+        }
+        else {
+            let key = Array(availableHobbies.keys)[indexPath.section]
+            let hobbies = availableHobbies[key]
+            let hobby = hobbies![indexPath.item]
+            cell.hobbyLabel.text = hobby.hobbyName
+        }
+        
+        return cell
     }
 
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
@@ -67,7 +96,18 @@ class EditHobbiesViewController: HoBshareViewController {
                     
                 }
                 else {
-                    showError("You may only select up to \(kMaxHobbies) hobbies. Please delete a hobby, then try again.")
+                    let alert = UIAlertController(title: kAppTitle, message: "You may only select up to \(kMaxHobbies) hobbies. Would you like to replace one of your hobbies?", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "Replace", style: .Default, handler: { (action) in
+                        self.replaceHobbie()
+                    })
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: { (action) in
+                        alert.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                    
+                    alert.addAction(okAction)
+                    alert.addAction(cancelAction)
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
             }
             
@@ -91,6 +131,10 @@ class EditHobbiesViewController: HoBshareViewController {
             
             self.presentViewController(alert, animated: true, completion: nil)
         }
+    }
+    
+    func replaceHobbie() {
+        self.replaceEnabled = true
     }
 
 }

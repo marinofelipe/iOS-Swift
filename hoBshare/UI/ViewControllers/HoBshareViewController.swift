@@ -13,6 +13,7 @@ class HoBshareViewController: UIViewController, CLLocationManagerDelegate, UICol
 
     
     @IBOutlet weak var hobbiesCollectionView: UICollectionView!
+
     
     let availableHobbies: [String: [Hobby]] = HobbyDP().fetchHobbies()
     
@@ -90,7 +91,7 @@ class HoBshareViewController: UIViewController, CLLocationManagerDelegate, UICol
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: HobbyCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("HobbyCollectionViewCell", forIndexPath: indexPath) as! HobbyCollectionViewCell
-        
+
         if collectionView == hobbiesCollectionView {
             let hobby = myHobbies![indexPath.item]
             cell.hobbyLabel.text = hobby.hobbyName
