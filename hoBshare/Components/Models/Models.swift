@@ -93,7 +93,7 @@ class User: SFLBaseModel, JSONSerializable, MKAnnotation {
         dict.setValue(jsonSafeHobbiesArray, forKey: kHobbies)
         
         if self.searchHobby != nil {
-            dict.setValue(self.searchHobby, forKey: kHobbySearch)
+            dict.setValue(self.searchHobby!.hobbyName!, forKey: kHobbySearch)
         }
         
         return dict
