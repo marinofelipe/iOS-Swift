@@ -18,12 +18,10 @@ class EditHobbiesViewController: HoBshareViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.availableHobbiesCollectionView.delegate = self
-        
+        hobbiesCollectionView.reloadData()
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {   
@@ -32,10 +30,15 @@ class EditHobbiesViewController: HoBshareViewController {
         if collectionView == hobbiesCollectionView {
             let hobby = myHobbies![indexPath.item]
             cell.hobbyLabel.text = hobby.hobbyName
+            
             if replaceEnabled == true {
                 cell.replaceButton.hidden = false
+                UIView.animateWithDuration(1, animations: {
+                    cell.replaceButton.center.x += self.view.bounds.width;
+                })
             }
             else {
+                cell.replaceButton.center.x -= self.view.bounds.width;
                 cell.replaceButton.hidden = true
             }
         }
@@ -45,6 +48,10 @@ class EditHobbiesViewController: HoBshareViewController {
             let hobby = hobbies![indexPath.item]
             cell.hobbyLabel.text = hobby.hobbyName
         }
+        
+        cell.replaceButton.tag = indexPath.row
+        cell.replaceButton.addTarget(self, action: #selector(replaceSelectedHobby), forControlEvents: .TouchUpInside)
+        
         
         return cell
     }
@@ -135,6 +142,10 @@ class EditHobbiesViewController: HoBshareViewController {
     
     func replaceHobbie() {
         self.replaceEnabled = true
+    }
+    
+    func replaceSelectedHobby(sender: UIButton!) {
+        print("Hobby selected: \(myHobbies![sender.tag])")
     }
 
 }

@@ -453,7 +453,6 @@
                                 <rect key="frame" x="20" y="487" width="560" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="Hdd-qy-q6G"/>
                                     <constraint firstAttribute="height" constant="56" id="XnH-s8-6Ra"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j9K-en-5uf">
@@ -476,10 +475,18 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-nr-5Kg">
-                                                    <rect key="frame" x="16" y="0.0" width="68" height="30"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="Replace"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-nr-5Kg">
+                                                    <rect key="frame" x="13" y="-1" width="73" height="23"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="73" id="GCT-JX-qsu"/>
+                                                        <constraint firstAttribute="height" constant="23" id="ia2-79-h7L"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <state key="normal" title="Replace">
+                                                        <color key="titleColor" red="0.43584173890562311" green="0.88192020939086291" blue="0.54498953981320142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.99542981389999996" green="0.66066008809999999" blue="0.26776885989999999" alpha="1" colorSpace="deviceRGB"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -489,7 +496,9 @@
                                             <constraint firstItem="1j6-Qg-rAy" firstAttribute="bottom" secondItem="CZA-Io-vnq" secondAttribute="bottomMargin" id="81A-8f-SIk"/>
                                             <constraint firstItem="1j6-Qg-rAy" firstAttribute="leading" secondItem="CZA-Io-vnq" secondAttribute="leadingMargin" id="AUg-zp-CeM"/>
                                             <constraint firstItem="1j6-Qg-rAy" firstAttribute="top" secondItem="CZA-Io-vnq" secondAttribute="topMargin" id="Bbh-T9-NG3"/>
+                                            <constraint firstItem="uf9-nr-5Kg" firstAttribute="centerX" secondItem="CZA-Io-vnq" secondAttribute="centerX" id="VB1-xo-0ej"/>
                                             <constraint firstItem="1j6-Qg-rAy" firstAttribute="trailing" secondItem="CZA-Io-vnq" secondAttribute="trailingMargin" id="lCQ-dR-6dZ"/>
+                                            <constraint firstItem="uf9-nr-5Kg" firstAttribute="top" secondItem="CZA-Io-vnq" secondAttribute="topMargin" constant="-9" id="x5q-Xm-W33"/>
                                         </constraints>
                                         <size key="customSize" width="100" height="50"/>
                                         <connections>
@@ -498,11 +507,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Hdd-qy-q6G"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Xe6-Xb-sp0" id="XLt-nl-mtW"/>
                                     <outlet property="delegate" destination="Xe6-Xb-sp0" id="HTo-nt-9dQ"/>
