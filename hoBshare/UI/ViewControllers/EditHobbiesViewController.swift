@@ -30,15 +30,16 @@ class EditHobbiesViewController: HoBshareViewController {
         if collectionView == hobbiesCollectionView {
             let hobby = myHobbies![indexPath.item]
             cell.hobbyLabel.text = hobby.hobbyName
+            cell.replaceButton.center.x -= (self.view.bounds.width)/2
             
             if replaceEnabled == true {
                 cell.replaceButton.hidden = false
                 UIView.animateWithDuration(1, animations: {
-                    cell.replaceButton.center.x += self.view.bounds.width;
+                    cell.replaceButton.center.x += self.view.bounds.width/2
                 })
             }
             else {
-                cell.replaceButton.center.x -= self.view.bounds.width;
+                cell.replaceButton.center.x -= (self.view.bounds.width)/2
                 cell.replaceButton.hidden = true
             }
         }
