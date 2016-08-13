@@ -381,7 +381,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HobbyCollectionViewCell" id="FOF-KY-2lx" customClass="ReplaceableHobbyCollectionViewCell" customModule="hoBshare" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HobbyCollectionViewCell" id="FOF-KY-2lx" customClass="HobbyCollectionViewCell" customModule="hoBshare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="100" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -394,11 +394,6 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ2-qi-2eL">
-                                                    <rect key="frame" x="16" y="0.0" width="68" height="30"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="Replace"/>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -412,7 +407,6 @@
                                         <size key="customSize" width="100" height="50"/>
                                         <connections>
                                             <outlet property="hobbyLabel" destination="bKG-bh-iUs" id="gun-N4-JNJ"/>
-                                            <outlet property="replaceButton" destination="dQ2-qi-2eL" id="4KP-ve-GWv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -462,7 +456,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HobbyCollectionViewCell" id="CZA-Io-vnq" customClass="ReplaceableHobbyCollectionViewCell" customModule="hoBshare" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HobbyCollectionViewCell" id="CZA-Io-vnq" customClass="HobbyCollectionViewCell" customModule="hoBshare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -475,19 +469,6 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-nr-5Kg">
-                                                    <rect key="frame" x="13" y="-1" width="73" height="23"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="73" id="GCT-JX-qsu"/>
-                                                        <constraint firstAttribute="height" constant="23" id="ia2-79-h7L"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <state key="normal" title="Replace">
-                                                        <color key="titleColor" red="0.43584173890562311" green="0.88192020939086291" blue="0.54498953981320142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="titleShadowColor" red="0.99542981389999996" green="0.66066008809999999" blue="0.26776885989999999" alpha="1" colorSpace="deviceRGB"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -496,14 +477,11 @@
                                             <constraint firstItem="1j6-Qg-rAy" firstAttribute="bottom" secondItem="CZA-Io-vnq" secondAttribute="bottomMargin" id="81A-8f-SIk"/>
                                             <constraint firstItem="1j6-Qg-rAy" firstAttribute="leading" secondItem="CZA-Io-vnq" secondAttribute="leadingMargin" id="AUg-zp-CeM"/>
                                             <constraint firstItem="1j6-Qg-rAy" firstAttribute="top" secondItem="CZA-Io-vnq" secondAttribute="topMargin" id="Bbh-T9-NG3"/>
-                                            <constraint firstItem="uf9-nr-5Kg" firstAttribute="centerX" secondItem="CZA-Io-vnq" secondAttribute="centerX" id="VB1-xo-0ej"/>
                                             <constraint firstItem="1j6-Qg-rAy" firstAttribute="trailing" secondItem="CZA-Io-vnq" secondAttribute="trailingMargin" id="lCQ-dR-6dZ"/>
-                                            <constraint firstItem="uf9-nr-5Kg" firstAttribute="top" secondItem="CZA-Io-vnq" secondAttribute="topMargin" constant="-9" id="x5q-Xm-W33"/>
                                         </constraints>
                                         <size key="customSize" width="100" height="50"/>
                                         <connections>
                                             <outlet property="hobbyLabel" destination="1j6-Qg-rAy" id="FJ6-Gd-71t"/>
-                                            <outlet property="replaceButton" destination="uf9-nr-5Kg" id="WbK-ry-qcT"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

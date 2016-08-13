@@ -9,39 +9,26 @@
 import UIKit
 
 class EditHobbiesViewController: HoBshareViewController {
-
+    
     @IBOutlet weak var availableHobbiesCollectionView: UICollectionView!
     
-    var replaceEnabled: Bool = false {
-        didSet {
-            hobbiesCollectionView.reloadData()
-        }
-    }
+    var replaceEnabled: Bool = false
+    
+    var selectedHobbyName:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpLongPress()
         self.availableHobbiesCollectionView.delegate = self
         hobbiesCollectionView.reloadData()
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {   
-        let cell: ReplaceableHobbyCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("HobbyCollectionViewCell", forIndexPath: indexPath) as! ReplaceableHobbyCollectionViewCell
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell:HobbyCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("HobbyCollectionViewCell", forIndexPath: indexPath) as! HobbyCollectionViewCell
         
         if collectionView == hobbiesCollectionView {
             let hobby = myHobbies![indexPath.item]
             cell.hobbyLabel.text = hobby.hobbyName
-            cell.replaceButton.center.x -= (self.view.bounds.width)/2
-            
-            if replaceEnabled == true {
-                cell.replaceButton.hidden = false
-                UIView.animateWithDuration(1, animations: {
-                    cell.replaceButton.center.x += self.view.bounds.width/2
-                })
-            }
-            else {
-                cell.replaceButton.center.x -= (self.view.bounds.width)/2
-                cell.replaceButton.hidden = true
-            }
         }
         else {
             let key = Array(availableHobbies.keys)[indexPath.section]
@@ -50,13 +37,9 @@ class EditHobbiesViewController: HoBshareViewController {
             cell.hobbyLabel.text = hobby.hobbyName
         }
         
-        cell.replaceButton.tag = indexPath.row
-        cell.replaceButton.addTarget(self, action: #selector(replaceSelectedHobby), forControlEvents: .TouchUpInside)
-        
-        
         return cell
     }
-
+    
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
         let reusableView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HobbyCategoryHeader", forIndexPath: indexPath)
@@ -94,59 +77,141 @@ class EditHobbiesViewController: HoBshareViewController {
             let hobbies = availableHobbies[key]
             let hobby = hobbies![indexPath.item]
             
-            
-            if myHobbies?.contains( { $0.hobbyName == hobby.hobbyName } ) == false {
-                
-                if myHobbies!.count < kMaxHobbies {
+            if replaceEnabled == false {
+                if myHobbies?.contains( { $0.hobbyName == hobby.hobbyName } ) == false {
                     
-                    myHobbies! += [hobby]
-                    self.saveHobbies()
-                    
-                }
-                else {
-                    let alert = UIAlertController(title: kAppTitle, message: "You may only select up to \(kMaxHobbies) hobbies. Would you like to replace one of your hobbies?", preferredStyle: .Alert)
-                    let okAction = UIAlertAction(title: "Replace", style: .Default, handler: { (action) in
-                        self.replaceHobbie()
-                    })
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: { (action) in
-                        alert.dismissViewControllerAnimated(true, completion: nil)
-                    })
-                    
-                    alert.addAction(okAction)
-                    alert.addAction(cancelAction)
-                    
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    if myHobbies!.count < kMaxHobbies {
+                        
+                        myHobbies! += [hobby]
+                        self.saveHobbies()
+                    }
+                    else {
+                        let alert = UIAlertController(title: kAppTitle, message: "You may only select up to \(kMaxHobbies) hobbies. Press and hold an available hobby to choose a hobby to replace!", preferredStyle: .Alert)
+                        let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: { (action) in
+                            alert.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                        
+                        alert.addAction(cancelAction)
+                        
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
                 }
             }
             
         }
         else {
-            
-            let alert = UIAlertController(title: kAppTitle, message: "Would you like to delete this hobby?", preferredStyle: .Alert)
-            let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) in
+            if (replaceEnabled == false) {
+                let alert = UIAlertController(title: kAppTitle, message: "Would you like to delete this hobby?", preferredStyle: .Alert)
+                let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) in
+                    
+                    self.myHobbies!.removeAtIndex(indexPath.item)
+                    self.saveHobbies()
+                    
+                })
                 
-                self.myHobbies!.removeAtIndex(indexPath.item)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: { (action) in
+                    alert.dismissViewControllerAnimated(true, completion: nil)
+                })
+                
+                alert.addAction(deleteAction)
+                alert.addAction(cancelAction)
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else {
+                self.myHobbies![indexPath.item].hobbyName = selectedHobbyName
+                replaceEnabled = false
                 self.saveHobbies()
-            
-            })
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: { (action) in
-                alert.dismissViewControllerAnimated(true, completion: nil)
-            })
-            
-            alert.addAction(deleteAction)
-            alert.addAction(cancelAction)
-            
-            self.presentViewController(alert, animated: true, completion: nil)
+            }
         }
-    }
-    
-    func replaceHobbie() {
-        self.replaceEnabled = true
     }
     
     func replaceSelectedHobby(sender: UIButton!) {
         print("Hobby selected: \(myHobbies![sender.tag])")
     }
+    
+}
 
+extension EditHobbiesViewController: UIGestureRecognizerDelegate {
+    
+    func setUpLongPress() {
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        self.availableHobbiesCollectionView.addGestureRecognizer(lpgr)
+    }
+    
+    func handleLongPress(gestureRecognizer: UIGestureRecognizer) {
+        if gestureRecognizer.state != .Ended {
+            return
+        }
+        
+        let point = gestureRecognizer.locationInView(self.availableHobbiesCollectionView)
+        let indexPath = self.availableHobbiesCollectionView.indexPathForItemAtPoint(point)
+        
+        if let index = indexPath {
+            let cell = self.availableHobbiesCollectionView.cellForItemAtIndexPath(index) as! HobbyCollectionViewCell
+            
+            var availableHobbiesCellsIndexPath = self.availableHobbiesCollectionView.indexPathsForVisibleItems()
+            availableHobbiesCellsIndexPath.removeAtIndex(indexPath!.item)
+            
+            for indexPath in availableHobbiesCellsIndexPath {
+                let cell = self.availableHobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
+                if cell.backgroundColor == UIColor(red: 69/255.0, green: 139/255.0, blue: 116/255.0, alpha: 1.0) {
+                    UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                        cell.backgroundColor = UIColor.darkGrayColor()
+                        cell.hobbyLabel.textColor = UIColor.whiteColor()
+                        }, completion: { (finished) in
+                            cell.tag = 1
+                            
+                    })
+                    self.replaceEnabled = true
+                }
+            }
+            if cell.tag != 1 {
+                UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                    cell.backgroundColor = UIColor(red: 69/255.0, green: 139/255.0, blue: 116/255.0, alpha: 1.0)
+                    cell.hobbyLabel.textColor = UIColor.blackColor()
+                    }, completion: { (finished) in
+                        cell.tag = 1
+                        self.selectedHobbyName = cell.hobbyLabel.text!
+                })
+                self.replaceEnabled = true
+            }
+            else {
+                UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                    cell.backgroundColor = UIColor.darkGrayColor()
+                    cell.hobbyLabel.textColor = UIColor.whiteColor()
+                    }, completion: { (finished) in
+                        cell.tag = 0
+                })
+                self.replaceEnabled = false
+            }
+            
+            let myHobbiesCellsIndexPath = self.hobbiesCollectionView.indexPathsForVisibleItems()
+            
+            for indexPath in myHobbiesCellsIndexPath {
+                if cell.tag == 0 {
+                    let cell = self.hobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
+                    UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                        cell.backgroundColor = UIColor(red: 238/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+                        }, completion: { (finished) in
+                            cell.tag = 1
+                            self.selectedHobbyName = cell.hobbyLabel.text!
+                    })
+                }
+                else {
+                    let cell = self.hobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
+                    UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                        cell.backgroundColor = UIColor.darkGrayColor()
+                        }, completion: { (finished) in
+                            cell.tag = 0
+                    })
+                }
+            }
+        }
+        
+    }
+    
 }
