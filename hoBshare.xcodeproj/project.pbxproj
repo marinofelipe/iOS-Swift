@@ -14,11 +14,11 @@
 		AE9D4E081D39E8CE006C5866 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D4E071D39E8CE006C5866 /* Models.swift */; };
 		AE9D4E0A1D39E968006C5866 /* DataProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D4E091D39E968006C5866 /* DataProviders.swift */; };
 		AEB163991D3F1DB200AB4203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB163981D3F1DB200AB4203 /* Constants.swift */; };
-		AEB9EED51D579BEF005C31E9 /* ReplaceableHobbyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9EED41D579BEF005C31E9 /* ReplaceableHobbyCollectionViewCell.swift */; };
 		AEC24C181D35B209009AC613 /* HoBshareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C171D35B209009AC613 /* HoBshareViewController.swift */; };
 		AEC24C1A1D35B24C009AC613 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C191D35B24C009AC613 /* MeViewController.swift */; };
 		AEC24C1C1D35B281009AC613 /* EditHobbiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */; };
 		AEC24C1E1D35B2AD009AC613 /* NeighborsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */; };
+		AEC3FE571D61023D00E39048 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC3FE561D61023D00E39048 /* CustomUIView.swift */; };
 		AEDC0BE41D333D5B00C0822B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC0BE31D333D5B00C0822B /* AppDelegate.swift */; };
 		AEDC0BE91D333D5B00C0822B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDC0BE71D333D5B00C0822B /* Main.storyboard */; };
 		AEDC0BEB1D333D5B00C0822B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDC0BEA1D333D5B00C0822B /* Assets.xcassets */; };
@@ -53,11 +53,11 @@
 		AE9D4E071D39E8CE006C5866 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Components/Models/Models.swift; sourceTree = "<group>"; };
 		AE9D4E091D39E968006C5866 /* DataProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProviders.swift; path = "Components/Data Providers/DataProviders.swift"; sourceTree = "<group>"; };
 		AEB163981D3F1DB200AB4203 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Components/Constants/Constants.swift; sourceTree = "<group>"; };
-		AEB9EED41D579BEF005C31E9 /* ReplaceableHobbyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceableHobbyCollectionViewCell.swift; sourceTree = "<group>"; };
 		AEC24C171D35B209009AC613 /* HoBshareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoBshareViewController.swift; path = UI/ViewControllers/HoBshareViewController.swift; sourceTree = "<group>"; };
 		AEC24C191D35B24C009AC613 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeViewController.swift; path = UI/ViewControllers/MeViewController.swift; sourceTree = "<group>"; };
 		AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditHobbiesViewController.swift; path = UI/ViewControllers/EditHobbiesViewController.swift; sourceTree = "<group>"; };
 		AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeighborsViewController.swift; path = UI/ViewControllers/NeighborsViewController.swift; sourceTree = "<group>"; };
+		AEC3FE561D61023D00E39048 /* CustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 		AEDC0BE01D333D5A00C0822B /* hoBshare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hoBshare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDC0BE31D333D5B00C0822B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDC0BE81D333D5B00C0822B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */,
-				AEB9EED41D579BEF005C31E9 /* ReplaceableHobbyCollectionViewCell.swift */,
 				AE45DA211D44727F002FCB87 /* HobbiesCollectionViewHeader.swift */,
+				AEC3FE561D61023D00E39048 /* CustomUIView.swift */,
 			);
 			name = "Generic UI";
 			sourceTree = "<group>";
@@ -387,9 +387,9 @@
 				AEC24C1E1D35B2AD009AC613 /* NeighborsViewController.swift in Sources */,
 				AEC24C1A1D35B24C009AC613 /* MeViewController.swift in Sources */,
 				AE9D4E0A1D39E968006C5866 /* DataProviders.swift in Sources */,
-				AEB9EED51D579BEF005C31E9 /* ReplaceableHobbyCollectionViewCell.swift in Sources */,
 				AEC24C181D35B209009AC613 /* HoBshareViewController.swift in Sources */,
 				AEC24C1C1D35B281009AC613 /* EditHobbiesViewController.swift in Sources */,
+				AEC3FE571D61023D00E39048 /* CustomUIView.swift in Sources */,
 				AE45DA221D44727F002FCB87 /* HobbiesCollectionViewHeader.swift in Sources */,
 				AE9D4E081D39E8CE006C5866 /* Models.swift in Sources */,
 				AE5295A31D418AAE003B5542 /* SFLConnection.swift in Sources */,

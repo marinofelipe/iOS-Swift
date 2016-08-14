@@ -10,5 +10,6 @@ import UIKit
 
 class HobbyCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var hobbyLabel: UILabel!
 }

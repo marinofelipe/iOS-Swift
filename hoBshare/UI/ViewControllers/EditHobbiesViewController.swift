@@ -13,7 +13,6 @@ class EditHobbiesViewController: HoBshareViewController {
     @IBOutlet weak var availableHobbiesCollectionView: UICollectionView!
     
     var replaceEnabled: Bool = false
-    
     var selectedHobbyName:String = ""
     
     override func viewDidLoad() {
@@ -43,9 +42,7 @@ class EditHobbiesViewController: HoBshareViewController {
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
         let reusableView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HobbyCategoryHeader", forIndexPath: indexPath)
-        
         (reusableView as! HobbiesCollectionViewHeader).categoryLabel.text = Array(availableHobbies.keys)[indexPath.section]
-        
         return reusableView
     }
     
@@ -122,12 +119,36 @@ class EditHobbiesViewController: HoBshareViewController {
                 self.myHobbies![indexPath.item].hobbyName = selectedHobbyName
                 replaceEnabled = false
                 self.saveHobbies()
+                
+                
+                let availableHobbiesCellsIndexPath = self.availableHobbiesCollectionView.indexPathsForVisibleItems()
+                
+                for indexPath in availableHobbiesCellsIndexPath {
+                    let cell = self.availableHobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
+                    if (cell.tag == 1) {
+                        UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                            cell.view.backgroundColor = UIColor.darkGrayColor()
+                            cell.hobbyLabel.textColor = UIColor.whiteColor()
+                            }, completion: { (finished) in
+                                cell.tag = 0
+                        })
+                    }
+                }
+                
+                let myHobbiesCellsIndexPath = self.hobbiesCollectionView.indexPathsForVisibleItems()
+                
+                for indexPath in myHobbiesCellsIndexPath {
+                    let cell = self.hobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
+                    UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                        cell.view.backgroundColor = UIColor.darkGrayColor()
+                        }, completion: { (finished) in
+                    })
+                }
+                
+                
+
             }
         }
-    }
-    
-    func replaceSelectedHobby(sender: UIButton!) {
-        print("Hobby selected: \(myHobbies![sender.tag])")
     }
     
 }
@@ -158,60 +179,81 @@ extension EditHobbiesViewController: UIGestureRecognizerDelegate {
             
             for indexPath in availableHobbiesCellsIndexPath {
                 let cell = self.availableHobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
-                if cell.backgroundColor == UIColor(red: 69/255.0, green: 139/255.0, blue: 116/255.0, alpha: 1.0) {
+                if cell.tag == 1 {
                     UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
-                        cell.backgroundColor = UIColor.darkGrayColor()
-                        cell.hobbyLabel.textColor = UIColor.whiteColor()
+                        UIView.animateWithDuration(0.9, animations: { 
+                            cell.view.backgroundColor = UIColor.darkGrayColor()
+                            cell.hobbyLabel.textColor = UIColor.whiteColor()
+                        })
                         }, completion: { (finished) in
-                            cell.tag = 1
-                            
+                            cell.tag = 0
                     })
                     self.replaceEnabled = true
                 }
             }
-            if cell.tag != 1 {
-                UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
-                    cell.backgroundColor = UIColor(red: 69/255.0, green: 139/255.0, blue: 116/255.0, alpha: 1.0)
-                    cell.hobbyLabel.textColor = UIColor.blackColor()
-                    }, completion: { (finished) in
-                        cell.tag = 1
-                        self.selectedHobbyName = cell.hobbyLabel.text!
-                })
-                self.replaceEnabled = true
-            }
-            else {
-                UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
-                    cell.backgroundColor = UIColor.darkGrayColor()
-                    cell.hobbyLabel.textColor = UIColor.whiteColor()
-                    }, completion: { (finished) in
-                        cell.tag = 0
-                })
-                self.replaceEnabled = false
+            
+            if myHobbies?.contains( { $0.hobbyName == cell.hobbyLabel.text } ) == false {
+                if cell.tag != 1 {
+                    UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                        UIView.animateWithDuration(0.9, animations: {
+                            cell.view.backgroundColor = UIColor(red: 69/255.0, green: 139/255.0, blue: 116/255.0, alpha: 1.0)
+                            cell.hobbyLabel.textColor = UIColor.blackColor()
+                        })
+                        }, completion: { (finished) in
+                            cell.tag = 1
+                            self.selectedHobbyName = cell.hobbyLabel.text!
+                    })
+                    self.replaceEnabled = true
+                }
+                else {
+                    UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                        UIView.animateWithDuration(0.9, animations: {
+                            cell.view.backgroundColor = UIColor.darkGrayColor()
+                            cell.hobbyLabel.textColor = UIColor.whiteColor()
+                        })
+                        }, completion: { (finished) in
+                            cell.tag = 0
+                    })
+                    self.replaceEnabled = false
+                }
             }
             
             let myHobbiesCellsIndexPath = self.hobbiesCollectionView.indexPathsForVisibleItems()
             
             for indexPath in myHobbiesCellsIndexPath {
-                if cell.tag == 0 {
-                    let cell = self.hobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
-                    UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
-                        cell.backgroundColor = UIColor(red: 238/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
-                        }, completion: { (finished) in
-                            cell.tag = 1
-                            self.selectedHobbyName = cell.hobbyLabel.text!
-                    })
+                if myHobbies?.contains( { $0.hobbyName == cell.hobbyLabel.text } ) == false {
+                    if cell.tag == 0 {
+                        let cell = self.hobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
+                        UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                            cell.view.backgroundColor = UIColor(red: 238/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+                            }, completion: { (finished) in
+                                cell.tag = 1
+                        })
+                    }
                 }
                 else {
+                    let myCell = self.hobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
+                    if myCell.hobbyLabel.text == cell.hobbyLabel.text {
+                        let animation = CABasicAnimation(keyPath: "position")
+                        animation.duration = 0.07
+                        animation.repeatCount = 4
+                        animation.autoreverses = true
+                        animation.fromValue = NSValue(CGPoint: CGPointMake(cell.view.center.x - 10, cell.view.center.y))
+                        animation.toValue = NSValue(CGPoint: CGPointMake(cell.view.center.x + 10, cell.view.center.y))
+                        cell.view.layer.addAnimation(animation, forKey: "position")
+                        myCell.view.layer.addAnimation(animation, forKey: "position")
+                    }
+                }
+                if cell.tag == 1{
                     let cell = self.hobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
                     UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
-                        cell.backgroundColor = UIColor.darkGrayColor()
+                        cell.view.backgroundColor = UIColor.darkGrayColor()
                         }, completion: { (finished) in
                             cell.tag = 0
                     })
                 }
             }
         }
-        
     }
     
 }
