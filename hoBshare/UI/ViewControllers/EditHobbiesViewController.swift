@@ -170,7 +170,7 @@ extension EditHobbiesViewController: UIGestureRecognizerDelegate {
             let clickedAvailableHobbyCell = self.availableHobbiesCollectionView.cellForItemAtIndexPath(index) as! HobbyCollectionViewCell
             
             var indexPathOfAvailableHobbiesCells = self.availableHobbiesCollectionView.indexPathsForVisibleItems()
-            indexPathOfAvailableHobbiesCells.removeAtIndex(indexPath!.item)
+            indexPathOfAvailableHobbiesCells.removeAtIndex(index.item)
             
             for indexPath in indexPathOfAvailableHobbiesCells {
                 let availableHobbyCell = self.availableHobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell

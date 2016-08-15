@@ -22,6 +22,20 @@ class NeighborsViewController: HoBshareViewController, MKMapViewDelegate {
 
         mapView.delegate = self
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        let indexPathOfMyHobbiesCells = hobbiesCollectionView.indexPathsForVisibleItems()
+        for index in indexPathOfMyHobbiesCells {
+            let cell = hobbiesCollectionView.cellForItemAtIndexPath(index) as! HobbyCollectionViewCell
+            if cell.tag != 0 {
+                cell.view.backgroundColor = UIColor.darkGrayColor()
+                cell.hobbyLabel.textColor = UIColor.whiteColor()
+            }
+        }
+    }
+
 
     override func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -51,10 +65,43 @@ class NeighborsViewController: HoBshareViewController, MKMapViewDelegate {
         
         self.fetchUsersWithHobby(myHobbies![indexPath.row])
         
-        let cell = collectionView.dataSource?.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! HobbyCollectionViewCell
+        let cell = hobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
         
-        cell.backgroundColor = UIColor.redColor()
+        let indexPathOfMyHobbiesCells = hobbiesCollectionView.indexPathsForVisibleItems()
+        let indexPathsOfClickedItems = hobbiesCollectionView.indexPathsForSelectedItems()
+        let indexPathOfClickedItem = indexPathsOfClickedItems![0]
+        
+        for index in indexPathOfMyHobbiesCells {
+            let myHobbyCell = self.hobbiesCollectionView.cellForItemAtIndexPath(index) as! HobbyCollectionViewCell
+            if index != indexPathOfClickedItem {
+                if myHobbyCell.tag == 1 {
+                    UIView.transitionWithView(myHobbyCell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                        UIView.animateWithDuration(0.9, animations: {
+                            myHobbyCell.view.backgroundColor = UIColor.darkGrayColor()
+                            myHobbyCell.hobbyLabel.textColor = UIColor.whiteColor()
+                        })
+                        }, completion: { (finished) in
+                            myHobbyCell.tag = 0
+                    })
+                }
+            }
+
+        }
+        if cell.tag == 0 {
+            UIView.transitionWithView(cell.contentView, duration: 0.9, options: .TransitionFlipFromLeft, animations: {
+                UIView.animateWithDuration(0.9, animations: {
+                    cell.view.backgroundColor = UIColor(red: 69/255.0, green: 139/255.0, blue: 116/255.0, alpha: 1.0)
+                    cell.hobbyLabel.textColor = UIColor.blackColor()
+                })
+                }, completion: { (finished) in
+                    cell.tag = 1
+            })
+        }
+        else {
+            shakeAnimationForCell(cell)
+        }
     }
+    
     
     func fetchUsersWithHobby(hobby: Hobby) {
         
@@ -114,6 +161,15 @@ class NeighborsViewController: HoBshareViewController, MKMapViewDelegate {
             }
         }
     }
-
     
+    func shakeAnimationForCell(clickedCell: HobbyCollectionViewCell) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(CGPoint: CGPointMake(clickedCell.view.center.x - 10, clickedCell.view.center.y))
+        animation.toValue = NSValue(CGPoint: CGPointMake(clickedCell.view.center.x + 10, clickedCell.view.center.y))
+        clickedCell.view.layer.addAnimation(animation, forKey: "position")
+    }
+
 }
