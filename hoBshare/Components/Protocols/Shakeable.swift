@@ -1,22 +1,17 @@
 //
-//  CustomUIView.swift
+//  Shakeable.swift
 //  hoBshare
 //
-//  Created by Felipe Lefevre Marino on 14/08/16.
+//  Created by Felipe Lefevre Marino on 8/15/16.
 //  Copyright © 2016 Felipe Lefevre Marino. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class CustomUIView: UIView {
-    
-    
-    @IBInspectable var viewBackgroundColor: UIColor? {
-        didSet {
-            layer.backgroundColor = viewBackgroundColor?.CGColor
-            layer.cornerRadius = 8
-        }
-    }
+
+protocol Shakeable { }
+
+extension Shakeable where Self: UIView {
     
     func shake() {
         let animation = CABasicAnimation(keyPath: "position")
@@ -27,5 +22,4 @@ import UIKit
         animation.toValue = NSValue(CGPoint: CGPointMake(self.center.x + 4.0, self.center.y))
         layer.addAnimation(animation, forKey: "position")
     }
-    
 }

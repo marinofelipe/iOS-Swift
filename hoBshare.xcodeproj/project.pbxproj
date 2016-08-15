@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DD01D231D6249AA007CD68E /* Shakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD01D221D6249AA007CD68E /* Shakeable.swift */; };
 		AE45DA221D44727F002FCB87 /* HobbiesCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45DA211D44727F002FCB87 /* HobbiesCollectionViewHeader.swift */; };
 		AE5289571D3C3E65009EC68D /* HobbyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */; };
 		AE5295A21D418AAE003B5542 /* SFLBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5295A01D418AAE003B5542 /* SFLBaseModel.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7DD01D221D6249AA007CD68E /* Shakeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Shakeable.swift; path = Components/Protocols/Shakeable.swift; sourceTree = "<group>"; };
 		AE45DA211D44727F002FCB87 /* HobbiesCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HobbiesCollectionViewHeader.swift; path = "UI/Generic UI/HobbiesCollectionViewHeader.swift"; sourceTree = "<group>"; };
 		AE5289561D3C3E65009EC68D /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HobbyCollectionViewCell.swift; path = "UI/Generic UI/HobbyCollectionViewCell.swift"; sourceTree = "<group>"; };
 		AE5295A01D418AAE003B5542 /* SFLBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLBaseModel.swift; path = Components/Network/SFLBaseModel.swift; sourceTree = "<group>"; };
@@ -57,7 +59,7 @@
 		AEC24C191D35B24C009AC613 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeViewController.swift; path = UI/ViewControllers/MeViewController.swift; sourceTree = "<group>"; };
 		AEC24C1B1D35B281009AC613 /* EditHobbiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditHobbiesViewController.swift; path = UI/ViewControllers/EditHobbiesViewController.swift; sourceTree = "<group>"; };
 		AEC24C1D1D35B2AD009AC613 /* NeighborsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeighborsViewController.swift; path = UI/ViewControllers/NeighborsViewController.swift; sourceTree = "<group>"; };
-		AEC3FE561D61023D00E39048 /* CustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
+		AEC3FE561D61023D00E39048 /* CustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomUIView.swift; path = "UI/Generic UI/CustomUIView.swift"; sourceTree = "<group>"; };
 		AEDC0BE01D333D5A00C0822B /* hoBshare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hoBshare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDC0BE31D333D5B00C0822B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDC0BE81D333D5B00C0822B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,9 +101,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7DD01D1F1D624855007CD68E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7DD01D221D6249AA007CD68E /* Shakeable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		AE2C20A41D46F3E80075E44D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7DD01D1F1D624855007CD68E /* Protocols */,
 				AE2C20A71D46F4150075E44D /* Data Providers */,
 				AE2C20A51D46F3FC0075E44D /* Constants */,
 				AE94D8BD1D46FB9A00500563 /* Network */,
@@ -386,6 +397,7 @@
 			files = (
 				AEC24C1E1D35B2AD009AC613 /* NeighborsViewController.swift in Sources */,
 				AEC24C1A1D35B24C009AC613 /* MeViewController.swift in Sources */,
+				7DD01D231D6249AA007CD68E /* Shakeable.swift in Sources */,
 				AE9D4E0A1D39E968006C5866 /* DataProviders.swift in Sources */,
 				AEC24C181D35B209009AC613 /* HoBshareViewController.swift in Sources */,
 				AEC24C1C1D35B281009AC613 /* EditHobbiesViewController.swift in Sources */,
