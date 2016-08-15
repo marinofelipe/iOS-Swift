@@ -98,7 +98,7 @@ class NeighborsViewController: HoBshareViewController, MKMapViewDelegate {
             })
         }
         else {
-            shakeAnimationForCell(cell)
+            cell.view.shake()
         }
     }
     
@@ -160,16 +160,6 @@ class NeighborsViewController: HoBshareViewController, MKMapViewDelegate {
                 self.showError(returnedListOfUsers.status.statusDescription!)
             }
         }
-    }
-    
-    func shakeAnimationForCell(clickedCell: HobbyCollectionViewCell) {
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.07
-        animation.repeatCount = 4
-        animation.autoreverses = true
-        animation.fromValue = NSValue(CGPoint: CGPointMake(clickedCell.view.center.x - 10, clickedCell.view.center.y))
-        animation.toValue = NSValue(CGPoint: CGPointMake(clickedCell.view.center.x + 10, clickedCell.view.center.y))
-        clickedCell.view.layer.addAnimation(animation, forKey: "position")
     }
 
 }

@@ -230,7 +230,8 @@ extension EditHobbiesViewController: UIGestureRecognizerDelegate {
                 else {
                     let myHobbyCell = self.hobbiesCollectionView.cellForItemAtIndexPath(indexPath) as! HobbyCollectionViewCell
                     if myHobbyCell.hobbyLabel.text == clickedAvailableHobbyCell.hobbyLabel.text {
-                        shakeAnimationForCells(clickedAvailableHobbyCell, myHobbyCell: myHobbyCell)
+                        clickedAvailableHobbyCell.view.shake()
+                        myHobbyCell.view.shake()
                     }
                 }
                 if clickedAvailableHobbyCell.tag == 1{
@@ -243,20 +244,6 @@ extension EditHobbiesViewController: UIGestureRecognizerDelegate {
                 }
             }
         }
-    }
-    
-    func shakeAnimationForCells(clickedCell: HobbyCollectionViewCell, myHobbyCell: HobbyCollectionViewCell) {
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.07
-        animation.repeatCount = 4
-        animation.autoreverses = true
-        animation.fromValue = NSValue(CGPoint: CGPointMake(clickedCell.view.center.x - 10, clickedCell.view.center.y))
-        animation.toValue = NSValue(CGPoint: CGPointMake(clickedCell.view.center.x + 10, clickedCell.view.center.y))
-        clickedCell.view.layer.addAnimation(animation, forKey: "position")
-        
-        animation.fromValue = NSValue(CGPoint: CGPointMake(myHobbyCell.view.center.x - 10, myHobbyCell.view.center.y))
-        animation.toValue = NSValue(CGPoint: CGPointMake(myHobbyCell.view.center.x + 10, myHobbyCell.view.center.y))
-        myHobbyCell.view.layer.addAnimation(animation, forKey: "position")
     }
     
 }
