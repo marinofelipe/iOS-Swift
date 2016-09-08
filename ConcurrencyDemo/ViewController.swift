@@ -53,40 +53,57 @@ class ViewController: UIViewController {
 
     @IBAction func didClickOnStart(sender: AnyObject) {
         
-        queue.addOperationWithBlock { () -> Void in
-            
+        let operation1 = NSBlockOperation {
             let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-            
-            NSOperationQueue.mainQueue().addOperationWithBlock({ 
+            NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.imageView1.image = img1
             })
         }
-        queue.addOperationWithBlock { () -> Void in
-            
+        
+        operation1.completionBlock = {
+            print("Operation 1 completed")
+        }
+        queue.addOperation(operation1)
+        
+        
+        let operation2 = NSBlockOperation {
             let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-            
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.imageView2.image = img2
             })
         }
-        queue.addOperationWithBlock { () -> Void in
-            
+        
+        operation2.completionBlock = {
+            print("Operation 2 completed")
+        }
+        queue.addOperation(operation2)
+        
+        
+        let operation3 = NSBlockOperation {
             let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-            
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.imageView3.image = img3
             })
         }
-        queue.addOperationWithBlock { () -> Void in
-            
+        
+        operation2.completionBlock = {
+            print("Operation 3 completed")
+        }
+        queue.addOperation(operation3)
+        
+        
+        let operation4 = NSBlockOperation {
             let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-            
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.imageView4.image = img4
             })
         }
         
-        
+        operation4.completionBlock = {
+            print("Operation 4 completed")
+        }
+        queue.addOperation(operation4)
+
     }
     
     @IBAction func sliderValueChanged(sender: UISlider) {
