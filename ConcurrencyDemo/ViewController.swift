@@ -42,42 +42,42 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didClickOnStart(sender: AnyObject) {
-        
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-        dispatch_async(queue) { () -> Void in
-                
-                let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-                dispatch_async(dispatch_get_main_queue(), { 
-                    
-                    self.imageView1.image = img1
+            let serialQueue = dispatch_queue_create("com.appcoda.imagesQueue", DISPATCH_QUEUE_SERIAL)
+            dispatch_async(serialQueue) { () -> Void in
+    
+                    let img1 = Downloader.downloadImageWithURL(imageURLs[0])
+                    dispatch_async(dispatch_get_main_queue(), {
+    
+                        self.imageView1.image = img1
+                    })
+            }
+            dispatch_async(serialQueue) { () -> Void in
+    
+                let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+                dispatch_async(dispatch_get_main_queue(), {
+    
+                    self.imageView2.image = img2
                 })
-        }
-        dispatch_async(queue) { () -> Void in
-            
-            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-            dispatch_async(dispatch_get_main_queue(), {
-                
-                self.imageView2.image = img2
-            })
-        }
-        dispatch_async(queue) { () -> Void in
-            
-            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-            dispatch_async(dispatch_get_main_queue(), {
-                
-                self.imageView3.image = img3
-            })
-        }
-        dispatch_async(queue) { () -> Void in
-            
-            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-            dispatch_async(dispatch_get_main_queue(), {
-                
-                self.imageView4.image = img4
-            })
-        }
+            }
+            dispatch_async(serialQueue) { () -> Void in
+    
+                let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+                dispatch_async(dispatch_get_main_queue(), {
+    
+                    self.imageView3.image = img3
+                })
+            }
+            dispatch_async(serialQueue) { () -> Void in
+    
+                let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    self.imageView4.image = img4
+                })
+            }
         
     }
+    
     @IBAction func sliderValueChanged(sender: UISlider) {
         
         self.sliderValueLabel.text = "\(sender.value * 100.0)"
