@@ -10,11 +10,11 @@ import UIKit
 
 class Album: NSObject {
     
-    var title: String!
-    var artist: String!
-    var genre: String!
-    var coverUrl: String!
-    var year: String!
+    var title : String!
+    var artist : String!
+    var genre : String!
+    var coverUrl : String!
+    var year : String!
     
     init(title: String, artist: String, genre: String, coverUrl: String, year: String) {
         super.init()
@@ -27,9 +27,9 @@ class Album: NSObject {
     
     override var description: String {
         return "title: \(title)" +
-                "artist: \(artist)" +
-                "genre: \(genre)" +
-                "coverUrl: \(coverUrl)" +
-                "year: \(year)"
+            "artist: \(artist)" +
+            "genre: \(genre)" +
+            "coverUrl: \(coverUrl)" +
+            "year: \(year)"
     }
 }

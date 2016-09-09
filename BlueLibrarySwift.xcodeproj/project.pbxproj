@@ -14,8 +14,8 @@
 		101DD6D51A052EDE00161F0D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 101DD6D31A052EDE00161F0D /* LaunchScreen.xib */; };
 		101DD6E11A052EDE00161F0D /* BlueLibrarySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DD6E01A052EDE00161F0D /* BlueLibrarySwiftTests.swift */; };
 		101DD6EC1A052F0E00161F0D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DD6EB1A052F0E00161F0D /* HTTPClient.swift */; };
-		7D6E4C9D1D82F66300217A8A /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E4C9C1D82F66300217A8A /* Album.swift */; };
-		7D6E4C9F1D82FAA100217A8A /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E4C9E1D82FAA100217A8A /* AlbumView.swift */; };
+		7D6E4CA11D83017400217A8A /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E4CA01D83017400217A8A /* Album.swift */; };
+		7D6E4CA31D83019B00217A8A /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E4CA21D83019B00217A8A /* AlbumView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,8 @@
 		101DD6DF1A052EDE00161F0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		101DD6E01A052EDE00161F0D /* BlueLibrarySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueLibrarySwiftTests.swift; sourceTree = "<group>"; };
 		101DD6EB1A052F0E00161F0D /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		7D6E4C9C1D82F66300217A8A /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
-		7D6E4C9E1D82FAA100217A8A /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		7D6E4CA01D83017400217A8A /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		7D6E4CA21D83019B00217A8A /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 				101DD6EA1A052EE400161F0D /* API */,
 				101DD6CA1A052EDE00161F0D /* AppDelegate.swift */,
 				101DD6CC1A052EDE00161F0D /* ViewController.swift */,
-				7D6E4C9C1D82F66300217A8A /* Album.swift */,
-				7D6E4C9E1D82FAA100217A8A /* AlbumView.swift */,
+				7D6E4CA01D83017400217A8A /* Album.swift */,
+				7D6E4CA21D83019B00217A8A /* AlbumView.swift */,
 				101DD6CE1A052EDE00161F0D /* Main.storyboard */,
 				101DD6D11A052EDE00161F0D /* Images.xcassets */,
 				101DD6D31A052EDE00161F0D /* LaunchScreen.xib */,
@@ -233,8 +233,8 @@
 				101DD6CD1A052EDE00161F0D /* ViewController.swift in Sources */,
 				101DD6CB1A052EDE00161F0D /* AppDelegate.swift in Sources */,
 				101DD6EC1A052F0E00161F0D /* HTTPClient.swift in Sources */,
-				7D6E4C9F1D82FAA100217A8A /* AlbumView.swift in Sources */,
-				7D6E4C9D1D82F66300217A8A /* Album.swift in Sources */,
+				7D6E4CA31D83019B00217A8A /* AlbumView.swift in Sources */,
+				7D6E4CA11D83017400217A8A /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

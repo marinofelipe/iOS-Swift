@@ -13,7 +13,6 @@ class AlbumView: UIView {
     private var coverImage: UIImageView!
     private var indicator: UIActivityIndicatorView!
     
-    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         commonInit()
@@ -38,8 +37,7 @@ class AlbumView: UIView {
     func highlightAlbum(didHighlightView: Bool) {
         if didHighlightView == true {
             backgroundColor = UIColor.whiteColor()
-        }
-        else {
+        } else {
             backgroundColor = UIColor.blackColor()
         }
     }
