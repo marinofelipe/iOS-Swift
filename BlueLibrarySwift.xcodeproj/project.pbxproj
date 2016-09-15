@@ -18,6 +18,7 @@
 		7D6E4CA31D83019B00217A8A /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E4CA21D83019B00217A8A /* AlbumView.swift */; };
 		7D6E4CA91D83194200217A8A /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E4CA81D83194200217A8A /* LibraryAPI.swift */; };
 		7D6E4CAB1D832FF000217A8A /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E4CAA1D832FF000217A8A /* PersistencyManager.swift */; };
+		7DEB555B1D8B351300B1E1F3 /* AlbumExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB555A1D8B351300B1E1F3 /* AlbumExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		7D6E4CA21D83019B00217A8A /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumView.swift; path = View/AlbumView.swift; sourceTree = "<group>"; };
 		7D6E4CA81D83194200217A8A /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LibraryAPI.swift; path = API/LibraryAPI.swift; sourceTree = "<group>"; };
 		7D6E4CAA1D832FF000217A8A /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyManager.swift; path = API/PersistencyManager.swift; sourceTree = "<group>"; };
+		7DEB555A1D8B351300B1E1F3 /* AlbumExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumExtensions.swift; path = Model/AlbumExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				7D6E4CA01D83017400217A8A /* Album.swift */,
+				7DEB555A1D8B351300B1E1F3 /* AlbumExtensions.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				101DD6CD1A052EDE00161F0D /* ViewController.swift in Sources */,
+				7DEB555B1D8B351300B1E1F3 /* AlbumExtensions.swift in Sources */,
 				101DD6CB1A052EDE00161F0D /* AppDelegate.swift in Sources */,
 				7D6E4CA91D83194200217A8A /* LibraryAPI.swift in Sources */,
 				101DD6EC1A052F0E00161F0D /* HTTPClient.swift in Sources */,
